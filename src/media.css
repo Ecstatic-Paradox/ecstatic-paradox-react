@@ -1,0 +1,78 @@
+@media (max-width: 575.98px) {
+  .cover {
+    height: unset;
+    padding: 5rem 1rem;
+  }
+
+  .hero-section {
+    height: unset;
+    padding: 5rem 1rem;
+  }
+
+  .title {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .container-fluid {
+    width: 100%;
+  }
+
+  .blog-wrap {
+    flex-wrap: wrap;
+  }
+
+  .footer-wrap {
+    flex-wrap: wrap;
+  }
+
+  .social-icon {
+    justify-content: center;
+  }
+
+  .navbar-nav {
+    text-align: center;
+  }
+
+  #wrapper {
+    margin-bottom: 10rem;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .event-card {
+    margin-bottom: 1rem;
+    padding: 1rem;
+  }
+
+  .col-md-3 {
+    width: 100%;
+  }
+
+  .about-hero {
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+  }
+  .about-cta > .row {
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .about-details {
+    padding: 0 !important;
+  }
+}
+
+@media (max-width: 1199.98px) {
+}
+
+@media (max-width: 1399.98px) {
+  .about-img {
+    padding: 0;
+  }
+  .about-details h6 {
+    font-size: unset;
+    line-height: unset;
+  }
+}
