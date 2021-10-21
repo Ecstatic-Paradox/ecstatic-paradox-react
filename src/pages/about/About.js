@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -6,6 +7,8 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import '../../css/index.css'
+
 
 function createData(name, country, spectrum, email) {
     return { name, country, spectrum, email };
@@ -13,13 +16,10 @@ function createData(name, country, spectrum, email) {
 
 const rows = [
     createData('John Doe', 'Nepal', 'Web Department', 'ohndoe@gmail.com'),
-    createData('John Doe', 'Nepal', 'Web Department', 'ohndoe@gmail.com'),
-    createData('John Doe', 'Nepal', 'Web Department', 'ohndoe@gmail.com'),
-    createData('John Doe', 'Nepal', 'Web Department', 'ohndoe@gmail.com'),
+    createData('Pratik Bashyal', 'Nepal', 'Web Department', 'ohndoe@gmail.com'),
+    createData('Suman Acharya', 'Nepal', 'Web Department', 'ohndoe@gmail.com'),
+    createData('Sudarshan Chapagain', 'Nepal', 'Web Department', 'ohndoe@gmail.com'),
 ];
-
-
-
 
 export default class About extends Component {
     render() {
@@ -160,8 +160,8 @@ export default class About extends Component {
                         <div className="core-member-wrap exception">
                             <div className="core-member-item">
                                 <img className="member-image" src="https://images.unsplash.com/photo-1445810694374-0a94739e4a03?w=500&h=500&fit=crop" alt="back view of woman wearing a backpack and beanie waiting to cross the road on a busy street at night in New York City, USA" />
-                                <div class="overlay">
-                                    <div class="core-member-info">
+                                <div className="overlay">
+                                    <div className="core-member-info">
                                         <h4>John Doe</h4>
                                         <p className="small-text">Managing Director</p>
                                         <div className="core-member-icon">
@@ -187,8 +187,8 @@ export default class About extends Component {
                             </div>
                             <div className="core-member-item">
                                 <img className="member-image" src="https://images.unsplash.com/photo-1429734956993-8a9b0555e122?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzR8fHN1bnNldHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=500&h=500&fit=crop" alt="back view of woman wearing a backpack and beanie waiting to cross the road on a busy street at night in New York City, USA" />
-                                <div class="overlay">
-                                    <div class="core-member-info">
+                                <div className="overlay">
+                                    <div className="core-member-info">
                                         <h4>John Doe</h4>
                                         <p className="small-text">Managing Director</p>
                                         <div className="core-member-icon">
@@ -214,8 +214,8 @@ export default class About extends Component {
                             </div>
                             <div className="core-member-item">
                                 <img className="member-image" src="https://images.unsplash.com/photo-1445810694374-0a94739e4a03?w=500&h=500&fit=crop" alt="back view of woman wearing a backpack and beanie waiting to cross the road on a busy street at night in New York City, USA" />
-                                <div class="overlay">
-                                    <div class="core-member-info">
+                                <div className="overlay">
+                                    <div className="core-member-info">
                                         <h4>John Doe</h4>
                                         <p className="small-text">Managing Director</p>
                                         <div className="core-member-icon">
@@ -241,8 +241,8 @@ export default class About extends Component {
                             </div>
                             <div className="core-member-item">
                                 <img className="member-image" src="https://images.unsplash.com/photo-1429734956993-8a9b0555e122?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzR8fHN1bnNldHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=500&h=500&fit=crop" alt="back view of woman wearing a backpack and beanie waiting to cross the road on a busy street at night in New York City, USA" />
-                                <div class="overlay">
-                                    <div class="core-member-info">
+                                <div className="overlay">
+                                    <div className="core-member-info">
                                         <h4>John Doe</h4>
                                         <p className="small-text">Managing Director</p>
                                         <div className="core-member-icon">
@@ -268,8 +268,8 @@ export default class About extends Component {
                             </div>
                             <div className="core-member-item">
                                 <img className="member-image" src="https://images.unsplash.com/photo-1445810694374-0a94739e4a03?w=500&h=500&fit=crop" alt="back view of woman wearing a backpack and beanie waiting to cross the road on a busy street at night in New York City, USA" />
-                                <div class="overlay">
-                                    <div class="core-member-info">
+                                <div className="overlay">
+                                    <div className="core-member-info">
                                         <h4>John Doe</h4>
                                         <p className="small-text">Managing Director</p>
                                         <div className="core-member-icon">
@@ -295,8 +295,8 @@ export default class About extends Component {
                             </div>
                             <div className="core-member-item">
                                 <img className="member-image" src="https://images.unsplash.com/photo-1429734956993-8a9b0555e122?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzR8fHN1bnNldHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=500&h=500&fit=crop" alt="back view of woman wearing a backpack and beanie waiting to cross the road on a busy street at night in New York City, USA" />
-                                <div class="overlay">
-                                    <div class="core-member-info">
+                                <div className="overlay">
+                                    <div className="core-member-info">
                                         <h4>John Doe</h4>
                                         <p className="small-text">Managing Director</p>
                                         <div className="core-member-icon">
@@ -322,8 +322,8 @@ export default class About extends Component {
                             </div>
                             <div className="core-member-item">
                                 <img className="member-image" src="https://images.unsplash.com/photo-1445810694374-0a94739e4a03?w=500&h=500&fit=crop" alt="back view of woman wearing a backpack and beanie waiting to cross the road on a busy street at night in New York City, USA" />
-                                <div class="overlay">
-                                    <div class="core-member-info">
+                                <div className="overlay">
+                                    <div className="core-member-info">
                                         <h4>John Doe</h4>
                                         <p className="small-text">Managing Director</p>
                                         <div className="core-member-icon">
@@ -349,8 +349,8 @@ export default class About extends Component {
                             </div>
                             <div className="core-member-item">
                                 <img className="member-image" src="https://images.unsplash.com/photo-1429734956993-8a9b0555e122?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzR8fHN1bnNldHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=500&h=500&fit=crop" alt="back view of woman wearing a backpack and beanie waiting to cross the road on a busy street at night in New York City, USA" />
-                                <div class="overlay">
-                                    <div class="core-member-info">
+                                <div className="overlay">
+                                    <div className="core-member-info">
                                         <h4>John Doe</h4>
                                         <p className="small-text">Managing Director</p>
                                         <div className="core-member-icon">
@@ -376,8 +376,8 @@ export default class About extends Component {
                             </div>
                             <div className="core-member-item">
                                 <img className="member-image" src="https://images.unsplash.com/photo-1445810694374-0a94739e4a03?w=500&h=500&fit=crop" alt="back view of woman wearing a backpack and beanie waiting to cross the road on a busy street at night in New York City, USA" />
-                                <div class="overlay">
-                                    <div class="core-member-info">
+                                <div className="overlay">
+                                    <div className="core-member-info">
                                         <h4>John Doe</h4>
                                         <p className="small-text">Managing Director</p>
                                         <div className="core-member-icon">
@@ -403,8 +403,8 @@ export default class About extends Component {
                             </div>
                             <div className="core-member-item">
                                 <img className="member-image" src="https://images.unsplash.com/photo-1429734956993-8a9b0555e122?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzR8fHN1bnNldHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=500&h=500&fit=crop" alt="back view of woman wearing a backpack and beanie waiting to cross the road on a busy street at night in New York City, USA" />
-                                <div class="overlay">
-                                    <div class="core-member-info">
+                                <div className="overlay">
+                                    <div className="core-member-info">
                                         <h4>John Doe</h4>
                                         <p className="small-text">Managing Director</p>
                                         <div className="core-member-icon">

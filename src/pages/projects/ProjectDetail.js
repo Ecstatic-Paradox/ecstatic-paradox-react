@@ -6,7 +6,7 @@ export default class ProjectDetail extends Component {
             <React.Fragment>
                 <section id="wrapper">
                     <div className="container-fluid project-case-study">
-                        <h1 className=" exception title text-center my-5">Case Study</h1>
+                        <h4 class="project-heading">Case Study</h4>
                         <div className="project-overview">
                             <div className="row">
                                 <div className="col-md-12 col-xl-6 mb-5">

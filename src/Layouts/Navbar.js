@@ -39,15 +39,16 @@ function Navbar() {
                 </Link>
               </li>
               <li className="nav-item dropdown">
-                <li
+                <div
                   className="nav-link dropdown-toggle"
                   id="navbarDropdownMenuLink"
+                  href=""
                   role="button"
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
                 >
                   Publications
-                </li>
+                </div>
                 <ul
                   className="dropdown-menu"
                   aria-labelledby="navbarDropdownMenuLink"
@@ -70,7 +71,7 @@ function Navbar() {
                 </ul>
               </li>
               <li className="nav-item dropdown">
-                <li
+                <div
                   className="nav-link dropdown-toggle"
                   id="navbarDropdownMenuLink"
                   role="button"
@@ -78,7 +79,7 @@ function Navbar() {
                   aria-expanded="false"
                 >
                   Programs
-                </li>
+                </div>
                 <ul
                   className="dropdown-menu"
                   aria-labelledby="navbarDropdownMenuLink"

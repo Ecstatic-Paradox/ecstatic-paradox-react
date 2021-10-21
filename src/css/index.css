@@ -431,6 +431,7 @@ a:hover {
   line-height: 2rem;
   margin-bottom: 2rem;
 }
+
 /* ABOUT PAGE */
 
 /* GALLERY */
@@ -501,20 +502,8 @@ a:hover {
     margin: 0;
   }
 }
-/* projects */
-.snippet-head {
-  margin-bottom: 7rem;
-  text-align: center;
-}
-.snippet-head-paragraph {
-  width: 50%;
-  margin: 0 auto;
-}
-.projects h2 {
-  margin-bottom: 3rem;
-  font-weight: 600;
-}
 
+/*owl carousel */
 .owl-nav {
   position: absolute;
   top: -5.4rem;
@@ -539,6 +528,21 @@ a:hover {
   padding: 0.7rem 1.5rem !important;
   margin-left: 10px;
 }
+/* owl carousel ends */
+
+/* projects */
+.snippet-head {
+  margin-bottom: 7rem;
+  text-align: center;
+}
+.snippet-head-paragraph {
+  width: 50%;
+  margin: 0 auto;
+}
+.projects h2 {
+  margin-bottom: 3rem;
+  font-weight: 600;
+}
 
 .project-title {
   font-weight: 600;
@@ -551,6 +555,7 @@ a:hover {
   line-height: 1.8rem;
   font-weight: 300;
 }
+
 .project-case-study span {
   font-weight: 500;
 }
@@ -562,3 +567,23 @@ a:hover {
   line-height: 1.7rem;
   margin-top: 2rem;
 }
+
+.project-heading {
+  position: relative;
+  color: var(--shade2);
+  margin: 6rem 0 4rem 1rem;
+}
+.project-heading::before {
+  content: " ";
+  position: absolute;
+  width: 0.3rem;
+  margin-left: -1rem;
+  height: 1.7rem;
+  background: var(--shade2);
+}
+
+.project-card,
+.article-card {
+  margin-right: 1.5rem;
+}
+/* project ends */
