@@ -56,7 +56,7 @@ export default class Home extends Component {
                 <section id="wrapper">
                     <div className="hero-section">
                         <div>
-                            <h1 className="big-text">Lorem Ipsum Dolor Sit Amet, <br />Consectetur Adipiscing</h1>
+                            <h1 className="big-text">Lorem Ipsum Dolor Sit<br /> Amet, Consectetur Adipiscing</h1>
                             <h6 className="small-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit</h6>
                             <button type="button" className="btn outline-btn">Explore site</button>
                         </div>

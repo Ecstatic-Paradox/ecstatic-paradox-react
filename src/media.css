@@ -1,4 +1,12 @@
 @media (max-width: 575.98px) {
+  .hero-section h1 {
+    font-size: 1.5rem !important;
+  }
+
+  .hero-section h6 {
+    font-size: 0.9rem !important;
+  }
+
   .cover {
     height: unset;
     padding: 5rem 1rem;
@@ -12,9 +20,17 @@
   .title {
     font-size: 2.5rem;
   }
+
+  .owl-nav {
+    display: none;
+  }
 }
 
 @media (max-width: 767.98px) {
+  .hero-section h1 {
+    font-size: 1.5rem;
+  }
+
   .container-fluid {
     width: 100%;
   }
@@ -41,6 +57,11 @@
 }
 
 @media (max-width: 991.98px) {
+  .hero-section h1 {
+    font-size: 2rem;
+    margin-bottom: 1.8rem;
+  }
+
   .event-card {
     margin-bottom: 1rem;
     padding: 1rem;
@@ -65,6 +86,9 @@
 }
 
 @media (max-width: 1199.98px) {
+  .snippet-head-paragraph {
+    width: 85%;
+  }
 }
 
 @media (max-width: 1399.98px) {

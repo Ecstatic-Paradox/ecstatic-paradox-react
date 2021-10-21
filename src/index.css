@@ -53,7 +53,7 @@ img {
 }
 
 .big-text {
-  font-size: 2.5rem;
+  /* font-size: 2.5rem; */
   font-weight: 800;
   color: var(--white);
 }
@@ -108,7 +108,9 @@ a:hover {
 }
 
 /* TYPO & LINKS */
-
+.navbar {
+  background-color: var(--white);
+}
 /* NAVBAR */
 .navbar-light .navbar-nav .nav-link {
   position: relative;
@@ -152,7 +154,7 @@ a:hover {
       rgba(45, 45, 45, 0.5),
       rgba(45, 45, 45, 0.5)
     ),
-    url("https://images.unsplash.com/photo-1609342475528-dd7d93e8311e?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=676&q=80");
+    url("https://images.unsplash.com/photo-1541797278110-6eb37eef25c0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=918&q=80");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -164,13 +166,12 @@ a:hover {
 }
 
 .hero-section h1 {
-  font-size: 4rem;
+  font-size: 3rem;
   margin-bottom: 1.8rem;
 }
 
 .hero-section h6 {
   color: var(--white);
-  font-size: 1.2rem;
   margin-bottom: 4rem;
 }
 
@@ -390,6 +391,18 @@ a:hover {
 }
 /* FOOTER */
 
+.core-member-icon {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.core-member-icon svg {
+  width: 2rem;
+  fill: white;
+  margin-right: 0.5rem;
+}
+
 /* ABOUT PAGE */
 .about-hero {
   height: 50vh;
@@ -397,7 +410,7 @@ a:hover {
       rgba(45, 45, 45, 0.5),
       rgba(45, 45, 45, 0.5)
     ),
-    url("https://images.unsplash.com/photo-1609342475528-dd7d93e8311e?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=676&q=80");
+    url("https://images.unsplash.com/photo-1495616811223-4d98c6e9c869?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1032&q=80");
   justify-content: space-evenly;
   align-items: center;
   text-align: left;
@@ -419,3 +432,133 @@ a:hover {
   margin-bottom: 2rem;
 }
 /* ABOUT PAGE */
+
+/* GALLERY */
+.core-member-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.core-member-item {
+  flex: 1 0 24rem;
+  margin: 1rem;
+  position: relative;
+}
+
+.member-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--primary);
+  opacity: 0.9;
+  overflow: hidden;
+  width: 0%;
+  height: 100%;
+  transition: 0.5s ease;
+}
+
+.core-member-item:hover .overlay {
+  width: 100%;
+}
+
+.core-member-info {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 25%;
+  -webkit-transform: translate(-25%, -50%);
+  -ms-transform: translate(-25%, -50%);
+  transform: translate(-25%, -50%);
+  white-space: nowrap;
+}
+
+.core-member-info > p {
+  color: white;
+}
+
+.exception {
+  margin-bottom: 5rem !important;
+}
+
+@supports (display: grid) {
+  .core-member-wrap {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20em, 1fr));
+    grid-gap: 1rem;
+  }
+
+  .core-member-wrap,
+  .core-member-item {
+    margin: 0;
+  }
+}
+/* projects */
+.snippet-head {
+  margin-bottom: 7rem;
+  text-align: center;
+}
+.snippet-head-paragraph {
+  width: 50%;
+  margin: 0 auto;
+}
+.projects h2 {
+  margin-bottom: 3rem;
+  font-weight: 600;
+}
+
+.owl-nav {
+  position: absolute;
+  top: -5.4rem;
+  right: 0;
+}
+.owl-carousel .owl-nav button.owl-prev {
+  border: none;
+  background-color: var(--primary);
+  color: var(--white);
+  letter-spacing: 1px;
+  font-weight: 600;
+  border-radius: 0;
+  padding: 0.7rem 1.5rem !important;
+}
+.owl-carousel .owl-nav button.owl-next {
+  border: none;
+  background-color: var(--primary);
+  color: var(--white);
+  letter-spacing: 1px;
+  font-weight: 600;
+  border-radius: 0;
+  padding: 0.7rem 1.5rem !important;
+  margin-left: 10px;
+}
+
+.project-title {
+  font-weight: 600;
+}
+.project-description {
+  font-weight: 400;
+  line-height: 1.7rem;
+}
+.project-points {
+  line-height: 1.8rem;
+  font-weight: 300;
+}
+.project-case-study span {
+  font-weight: 500;
+}
+.project-indetails {
+  margin-top: 8rem;
+}
+.project-indetails h6 {
+  font-weight: 300;
+  line-height: 1.7rem;
+  margin-top: 2rem;
+}
