@@ -1,5 +1,5 @@
 # Ecstatic Paradox React
-Ecstatic Paradox React is the frontend project for Ecstatic Paradox organization website.
+Ecstatic Paradox React is the frontend project for Ecstatic Paradox organization website 💎🚀
 
 ## Installation
 
