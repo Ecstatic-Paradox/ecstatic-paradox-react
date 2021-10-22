@@ -24,6 +24,11 @@
   .owl-nav {
     display: none;
   }
+
+  .project-card,
+  .article-card {
+    margin-right: unset;
+  }
 }
 
 @media (max-width: 767.98px) {
