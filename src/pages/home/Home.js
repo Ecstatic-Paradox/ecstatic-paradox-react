@@ -1,11 +1,46 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import { Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.min.css";
 import "swiper/swiper.min.css";
 
 export default class Home extends Component {
+
+  state = {
+    projects: [],
+  }
+
+  componentDidMount() {
+    this.fetchProjects();
+  }
+
+  fetchProjects = async () => {
+    const data = await fetch(
+      'http://localhost:8000/api/projects/'
+    )
+    const items = await data.json()
+    this.setState({ projects: items.items })
+    console.log(this.state.projects)
+  }
+
   render() {
+
+    const projects = this.state.projects.map(proj => {
+      return (
+        <SwiperSlide key={proj.id} >
+          <div className="slide-card" style={{ backgroundImage: `linear-gradient(rgb(20 20 40 / 30%), rgb(20 20 40 / 30%)), url(${proj.thumbnail})` }}>
+            <div className="slide-card-body">
+              <Link to={`/projects/${proj.id}`}><button type="button" className="btn filled-btn">See More</button></Link>
+              <h3 className="medium-text">{proj.title}</h3>
+            </div>
+          </div>
+        </SwiperSlide>
+      )
+    }
+
+    )
+
     return (
       <React.Fragment>
         {/* <!-- HERO --> */}
@@ -50,49 +85,7 @@ export default class Home extends Component {
               },
             }}
           >
-            <SwiperSlide>
-              <div className="slide-card" style={{ backgroundImage: 'linear-gradient(rgb(20 20 40 / 30%), rgb(20 20 40 / 30%)), url("https://images.pexels.com/photos/3225517/pexels-photo-3225517.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500")' }}>
-                <div className="slide-card-body">
-                  <button type="button" className="btn filled-btn">See More</button>
-                  <h3 className="medium-text">Lorem Ipsum Dolor</h3>
-                </div>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className="slide-card" style={{ backgroundImage: 'linear-gradient(rgb(20 20 40 / 30%), rgb(20 20 40 / 30%)), url("https://images.pexels.com/photos/3225517/pexels-photo-3225517.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500")' }}>
-                <div className="slide-card-body">
-                  <button type="button" className="btn filled-btn">See More</button>
-                  <h3 className="medium-text">Lorem Ipsum Dolor</h3>
-                </div>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className="slide-card" style={{ backgroundImage: 'linear-gradient(rgb(20 20 40 / 30%), rgb(20 20 40 / 30%)), url("https://images.pexels.com/photos/3225517/pexels-photo-3225517.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500")' }}>
-                <div className="slide-card-body">
-                  <button type="button" className="btn filled-btn">See More</button>
-                  <h3 className="medium-text">Lorem Ipsum Dolor</h3>
-                </div>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className="slide-card" style={{ backgroundImage: 'linear-gradient(rgb(20 20 40 / 30%), rgb(20 20 40 / 30%)), url("https://images.pexels.com/photos/3225517/pexels-photo-3225517.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500")' }}>
-                <div className="slide-card-body">
-                  <button type="button" className="btn filled-btn">See More</button>
-                  <h3 className="medium-text">Lorem Ipsum Dolor</h3>
-                </div>
-              </div>
-            </SwiperSlide>
-
-            <SwiperSlide>
-              <div className="slide-card" style={{ backgroundImage: 'linear-gradient(rgb(20 20 40 / 30%), rgb(20 20 40 / 30%)), url("https://images.pexels.com/photos/3225517/pexels-photo-3225517.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500")' }}>
-                <div className="slide-card-body">
-                  <button type="button" className="btn filled-btn">See More</button>
-                  <h3 className="medium-text">Lorem Ipsum Dolor</h3>
-                </div>
-              </div>
-            </SwiperSlide>
-
-
+            {projects}
           </Swiper>
 
 

@@ -1,25 +1,49 @@
 import React, { Component } from 'react'
 
 export default class ProjectDetail extends Component {
+
+    constructor(props) {
+        super(props)
+
+        this.state = {
+            project: null
+        }
+    }
+
+    componentDidMount() {
+        this.fetchProject();
+    }
+
+    fetchProject = async () => {
+        const data = await fetch(
+            `http://localhost:8000/api/projects/${this.props.match.params.id}`
+        )
+        const item = await data.json()
+        this.setState({ project: item })
+        console.log(this.state.project)
+    }
+
     render() {
+        const project = this.state.project ? this.state.project : ''
+        const team = project ? project.meta.sections[0] : ''
         return (
             <React.Fragment>
                 <section id="wrapper">
                     <div className="container-fluid project-case-study">
-                        <h4 class="project-heading">Case Study</h4>
+                        <h4 className="project-heading">Case Study</h4>
                         <div className="project-overview">
                             <div className="row">
                                 <div className="col-md-12 col-xl-6 mb-5">
-                                    <h1 className="project-title mb-3">How To Make World Better</h1>
-                                    <h6 className="project-description mb-5">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum quas commodi velit earum obcaecati modi rem amet voluptas nam quo ratione natus, tempora officia consectetur suscipit aliquam ad impedit repudiandae.Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum quas commodi velit earum obcaecati modi rem amet voluptas nam quo ratione natus, tempora officia consectetur suscipit aliquam ad impedit repudiandae.Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum quas commodi velit earum obcaecati modi rem amet voluptas nam quo ratione natus, tempora officia consectetur suscipit aliquam ad impedit repudiandae.Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum quas commodi velit earum obcaecati modi rem amet voluptas nam quo ratione natus, tempora officia consectetur suscipit aliquam ad impedit repudiandae.Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum quas commodi velit earum obcaecati modi rem amet voluptas nam quo ratione natus, tempora officia consectetur suscipit aliquam ad impedit repudiandae.Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum quas commodi velit earum obcaecati modi rem amet voluptas nam quo ratione natus, tempora officia consectetur suscipit aliquam ad impedit repudiandae.</h6>
-                                    <h5 className="project-points mb-3"><span>Project Assists:</span> John Doe, James Doe & Jack Doe</h5>
-                                    <h5 className="project-points mb-3"><span>Project Started:</span> July 17, 2021</h5>
-                                    <h5 className="project-points mb-5"><span>Project Ends:</span> July 10, 2021</h5>
+                                    <h1 className="project-title mb-3">{project.title}</h1>
+                                    <h6 className="project-description mb-5">{project.description}</h6>
+                                    <h5 className="project-points mb-3"><span>Project team: </span>{team}</h5>
+                                    <h5 className="project-points mb-3"><span>Project Started: </span>{project.start_date} </h5>
+                                    <h5 className="project-points mb-5"><span>Project Ends: </span> {project.end_date}</h5>
                                     {/* <button type="button" className="btn filled-btn">View Details (.pdf)</button> */}
                                 </div>
                                 {/* <!-- ends --> */}
                                 <div className="col-md-12 col-xl-6">
-                                    <img src="https://images.pexels.com/photos/669615/pexels-photo-669615.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="Project" />
+                                    <img className="project-image" src={project.thumbnail} alt="Project" />
                                 </div>
                                 {/* <!-- ends --> */}
                             </div>

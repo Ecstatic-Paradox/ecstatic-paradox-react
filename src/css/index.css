@@ -264,6 +264,9 @@ a:hover {
 }
 
 .blog-img img {
+  width: 100%;
+  object-fit: cover;
+  height: 400px;
   filter: brightness(0.7);
 }
 
@@ -286,6 +289,7 @@ a:hover {
 
 .card-body h4 {
   font-weight: 600;
+  color: var(--shade2);
 }
 
 /* BLOGS */
@@ -545,6 +549,7 @@ a:hover {
 }
 
 .project-title {
+  color: var(--shade2);
   font-weight: 600;
 }
 .project-description {
@@ -570,7 +575,7 @@ a:hover {
 
 .project-heading {
   position: relative;
-  color: var(--shade2);
+  /* color: var(--shade2); */
   margin: 6rem 0 4rem 1rem;
 }
 .project-heading::before {
@@ -590,4 +595,9 @@ a:hover {
 
 .article-card {
   margin-top: 1.5rem;
+}
+
+.project-image {
+  height: 500px;
+  object-fit: cover;
 }

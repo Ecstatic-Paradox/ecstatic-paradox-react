@@ -4,7 +4,6 @@ import App from './App';
 import './css/index.css';
 import './css/media.css';
 
-
 ReactDOM.render(
   <App />,
   document.getElementById('root')
