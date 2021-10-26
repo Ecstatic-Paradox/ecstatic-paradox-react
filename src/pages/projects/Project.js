@@ -46,10 +46,10 @@ export default class Project extends Component {
                             }
                         }}>
 
-                        {project.projects.map(proj => {
+                        {project.project_set.map(proj => {
                             return (
-                                <div className="item" key={proj.id}>
-                                    <Link to={`/projects/${proj.id}`}>
+                                <div className="item" key={proj.slug}>
+                                    <Link to={`/projects/${proj.slug}`}>
                                         <div className="project-card">
                                             <div className="blog-img">
                                                 <img src={proj.thumbnail} className="card-img-top" alt="Blog" />

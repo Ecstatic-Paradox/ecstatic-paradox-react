@@ -63,11 +63,11 @@ function Navbar() {
                       Research Papers
                     </Link>
                   </li>
-                  {/* <li>
+                  <li>
                     <Link className="dropdown-item" to="/articals">
                       Articals
                     </Link>
-                  </li> */}
+                  </li>
                 </ul>
               </li>
               <li className="nav-item dropdown">

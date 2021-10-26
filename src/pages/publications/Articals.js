@@ -1,6 +1,25 @@
 import React, { Component } from 'react'
 
 export default class Articals extends Component {
+
+  state = {
+    articals: [],
+  }
+
+  componentDidMount() {
+    this.fetchProjects();
+  }
+
+  fetchProjects = async () => {
+    const data = await fetch(
+      'http://localhost:8000/api/projects/'
+    )
+    const items = await data.json()
+    this.setState({ section: items.meta.sections })
+    console.log(this.state.section)
+  }
+
+
   render() {
     return (
       <>

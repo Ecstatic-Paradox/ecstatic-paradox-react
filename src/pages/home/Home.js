@@ -31,7 +31,7 @@ export default class Home extends Component {
         <SwiperSlide key={proj.id} >
           <div className="slide-card" style={{ backgroundImage: `linear-gradient(rgb(20 20 40 / 30%), rgb(20 20 40 / 30%)), url(${proj.thumbnail})` }}>
             <div className="slide-card-body">
-              <Link to={`/projects/${proj.id}`}><button type="button" className="btn filled-btn">See More</button></Link>
+              <Link to={`/projects/${proj.slug}`}><button type="button" className="btn filled-btn">See More</button></Link>
               <h3 className="medium-text">{proj.title}</h3>
             </div>
           </div>
@@ -58,36 +58,37 @@ export default class Home extends Component {
 
         {/* <!-- SLIDER --> */}
         <section id="wrapper">
-          <h1 className="title text-center mb-5">Projects</h1>
+          <div className="container-fluid">
+            <h1 className="title text-center mb-5">Projects</h1>
 
-          <Swiper
-            // install Swiper modules
-            modules={[Pagination]}
-            spaceBetween={10}
-            slidesPerView={1}
-            pagination={{ clickable: true }}
-            breakpoints={{
-              640: {
-                slidesPerView: 1,
-                spaceBetween: 10,
-              },
-              768: {
-                slidesPerView: 2,
-                spaceBetween: 10,
-              },
-              1024: {
-                slidesPerView: 3,
-                spaceBetween: 10,
-              },
-              1300: {
-                slidesPerView: 4,
-                spaceBetween: 10,
-              },
-            }}
-          >
-            {projects}
-          </Swiper>
-
+            <Swiper
+              // install Swiper modules
+              modules={[Pagination]}
+              spaceBetween={10}
+              slidesPerView={1}
+              pagination={{ clickable: true }}
+              breakpoints={{
+                640: {
+                  slidesPerView: 1,
+                  spaceBetween: 10,
+                },
+                768: {
+                  slidesPerView: 2,
+                  spaceBetween: 10,
+                },
+                1024: {
+                  slidesPerView: 3,
+                  spaceBetween: 10,
+                },
+                1300: {
+                  slidesPerView: 4,
+                  spaceBetween: 10,
+                },
+              }}
+            >
+              {projects}
+            </Swiper>
+          </div>
 
         </section>
         {/* <!-- SLIDER --> */}
@@ -99,7 +100,7 @@ export default class Home extends Component {
             <div>
               <h1 className="big-text">Our Journey</h1>
               <h6 className="small-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.<br /> Vitae cumque error consectetur!Veniam,<br /> minus eius Laboriosam.</h6>
-              <button type="button" className="btn filled-btn">Learn About Us</button>
+              <Link to="/about"><button type="button" className="btn filled-btn">Learn About Us</button></Link>
             </div>
           </div>
         </section>
@@ -140,7 +141,7 @@ export default class Home extends Component {
           <div className="cover text-center justify-content-center" style={{ backgroundImage: 'linear-gradient(rgb(20 20 40 / 60%), rgb(20 20 40 / 60%)), url("https://images.pexels.com/photos/8761540/pexels-photo-8761540.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260")', backgroundAttachment: 'unset' }}>
             <div className="w-100">
               <h1 className="big-text mb-4">Our latest Events</h1>
-              <button type="button" className="btn filled-btn">See all programs</button>
+              <button type="button" className="btn filled-btn">See Events</button>
               <div className="row event-wrap">
                 <div className="col-md-6">
                   <div className="event-card">

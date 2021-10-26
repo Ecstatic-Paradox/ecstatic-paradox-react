@@ -16,7 +16,7 @@ export default class ProjectDetail extends Component {
 
     fetchProject = async () => {
         const data = await fetch(
-            `http://localhost:8000/api/projects/${this.props.match.params.id}`
+            `http://localhost:8000/api/projects/${this.props.match.params.slug}`
         )
         const item = await data.json()
         this.setState({ project: item })
@@ -26,6 +26,14 @@ export default class ProjectDetail extends Component {
     render() {
         const project = this.state.project ? this.state.project : ''
         const team = project ? project.meta.sections[0] : ''
+        const contents = project ? project.content.map(con => {
+            return (
+                con.type === 'heading' ? <React.Fragment key={con.id}><h1 >{con.value}</h1><br /> </React.Fragment> : <React.Fragment key={con.id}><div dangerouslySetInnerHTML={{ __html: con.value }}></div><br /></React.Fragment>
+            )
+        }) : ''
+
+        console.log(contents)
+
         return (
             <React.Fragment>
                 <section id="wrapper">
@@ -50,26 +58,7 @@ export default class ProjectDetail extends Component {
                         </div>
                         {/* <!-- ends --> */}
                         <div className="project-indetails container">
-
-                            <h6>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.Quis accumsan eu, adipiscing nunc diam donec id nulla.Vulputate pharetra pretium elit aliquam tellus sed.Orci augue tellus quam nunc in ut nibh in.Elit tincidunt blandit sed mattis imperdiet tortor orci adipiscing.
-                            </h6>
-                            <h6>
-                                Quis accumsan eu, adipiscing nunc diam donec id nulla.Vulputate pharetra pretium elit aliquam tellus sed.Orci augue tellus quam nunc in ut nibh in.Elit tincidunt blandit sed mattis imperdiet tortor orci adipiscing.ipsum dolor sit amet, consectetur adipiscing elit.Quis accumsan eu, adipiscing nunc diam donec id nulla.Vulputate pharetra pretium elit aliquam tellus sed.Orci augue tellus quam nunc in ut nibh in.Elit tincidunt blandit sed mattis imperdiet tortor orci adipiscing.
-                            </h6>
-                            <br />
-                            <img src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=870&q=80" alt="Project" />
-                            <br />
-                            <h6>
-                                Quis accumsan eu, adipiscing nunc diam donec id nulla.Vulputate pharetra pretium elit aliquam tellus sed.Orci augue tellus quam nunc in ut nibh in.Elit tincidunt blandit sed mattis imperdiet tortor orci adipiscing.ipsum dolor sit amet, consectetur adipiscing elit.Quis accumsan eu, adipiscing nunc diam donec id nulla.Vulputate pharetra pretium elit aliquam tellus sed.Orci augue tellus quam nunc in ut nibh in.Elit tincidunt blandit sed mattis imperdiet tortor orci adipiscing.
-                            </h6>
-                            <h6>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.Quis accumsan eu, adipiscing nunc diam donec id nulla.Vulputate pharetra pretium elit aliquam tellus sed.Orci augue tellus quam nunc in ut nibh in.Elit tincidunt blandit sed mattis imperdiet tortor orci adipiscing.
-                            </h6>
-                            <h6 className="conclusion">
-                                <span>Conclusion: </span>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.Quis accumsan eu, adipiscing nunc diam donec id nulla.Vulputate pharetra pretium elit aliquam tellus sed.Orci augue tellus quam nunc in ut nibh in.Elit tincidunt blandit sed mattis imperdiet tortor orci adipiscing.
-                            </h6>
+                            {contents}
                         </div>
                     </div>
                 </section>
