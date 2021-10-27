@@ -601,3 +601,23 @@ a:hover {
   height: 500px;
   object-fit: cover;
 }
+
+.article-image {
+  height: 500px;
+  object-fit: cover;
+}
+
+.react-pdf__Page__canvas {
+  margin: auto;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.pdf-div {
+  position: relative;
+}
+
+.pdf-nav {
+  position: absolute;
+  bottom: 0;
+}

@@ -64,8 +64,8 @@ function Navbar() {
                     </Link>
                   </li>
                   <li>
-                    <Link className="dropdown-item" to="/articals">
-                      Articals
+                    <Link className="dropdown-item" to="/articles">
+                      Articles
                     </Link>
                   </li>
                 </ul>

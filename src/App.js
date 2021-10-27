@@ -7,11 +7,12 @@ import Navbar from './Layouts/Navbar';
 import Footer from './Layouts/Footer';
 import Blogs from "./pages/publications/Blogs";
 import ResearchPapers from "./pages/publications/ResearchPapers";
-import Articals from "./pages/publications/Articals";
+import Articles from "./pages/publications/Articles";
 import Webinar from "./pages/programs/Webinar";
 import TalkShow from "./pages/programs/TalkShow";
 import Courses from "./pages/courses/Courses";
 import ScrollToTop from "./ScrollToTop";
+import ArticalDetail from "./pages/publications/ArticalDetail";
 
 function App() {
   return (
@@ -26,7 +27,8 @@ function App() {
           <Route exact path="/projects/:slug" component={ProjectDetail} />
           <Route exact path="/blogs" component={Blogs} />
           <Route exact path="/research-papers" component={ResearchPapers} />
-          <Route exact path="/articals" component={Articals} />
+          <Route exact path="/articles" component={Articles} />
+          <Route exact path="/articles/:slug" component={ArticalDetail} />
           <Route exact path="/webinars" component={Webinar} />
           <Route exact path="/talk-shows" component={TalkShow} />
           <Route exact path="/courses" component={Courses} />
