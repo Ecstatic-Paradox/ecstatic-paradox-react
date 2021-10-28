@@ -7,12 +7,12 @@ import Navbar from './Layouts/Navbar';
 import Footer from './Layouts/Footer';
 import Blogs from "./pages/publications/Blogs";
 import ResearchPapers from "./pages/publications/ResearchPapers";
-import Articles from "./pages/publications/Articles";
+import Articles from "./pages/publications/Article/Articles";
 import Webinar from "./pages/programs/Webinar";
 import TalkShow from "./pages/programs/TalkShow";
 import Courses from "./pages/courses/Courses";
 import ScrollToTop from "./ScrollToTop";
-import ArticalDetail from "./pages/publications/ArticalDetail";
+import ArticalDetail from "./pages/publications/Article/ArticalDetail";
 
 function App() {
   return (

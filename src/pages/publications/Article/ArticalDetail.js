@@ -15,11 +15,15 @@ export default function ArticalDetail({ match }) {
   }
 
   const fetchArticle = async () => {
-    const data = await fetch(
-      `http://localhost:8000/api/articles/${match.params.slug}`
-    )
-    const item = await data.json()
-    setArticle(item)
+    try {
+      const data = await fetch(
+        `http://localhost:8000/api/articles/${match.params.slug}`
+      )
+      const item = await data.json()
+      setArticle(item)
+    } catch (err) {
+      console.log('some error occured')
+    }
   };
 
 

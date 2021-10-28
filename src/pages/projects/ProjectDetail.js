@@ -15,12 +15,15 @@ export default class ProjectDetail extends Component {
     }
 
     fetchProject = async () => {
-        const data = await fetch(
-            `http://localhost:8000/api/projects/${this.props.match.params.slug}`
-        )
-        const item = await data.json()
-        this.setState({ project: item })
-        console.log(this.state.project)
+        try {
+            const data = await fetch(
+                `http://localhost:8000/api/projects/${this.props.match.params.slug}`
+            )
+            const item = await data.json()
+            this.setState({ project: item })
+        } catch (err) {
+            console.log('some error occured')
+        }
     }
 
     render() {
@@ -31,8 +34,6 @@ export default class ProjectDetail extends Component {
                 con.type === 'heading' ? <React.Fragment key={con.id}><h1 >{con.value}</h1><br /> </React.Fragment> : <React.Fragment key={con.id}><div dangerouslySetInnerHTML={{ __html: con.value }}></div><br /></React.Fragment>
             )
         }) : ''
-
-        console.log(contents)
 
         return (
             <React.Fragment>
