@@ -146,6 +146,11 @@ a:hover {
   margin-bottom: 10rem;
 }
 
+/* span {
+  font-size: 13px !important;
+  color: var(--dark);
+} */
+
 /* HERO */
 .hero-section {
   width: 100%;
@@ -620,4 +625,22 @@ a:hover {
 .pdf-nav {
   position: absolute;
   bottom: 0;
+}
+
+/* Blogs */
+.bigpost-details {
+  width: 70%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 2rem;
+  background-color: #ffffff;
+  margin: 0 auto;
+  transform: translateY(-10rem);
+}
+
+.small-post h4 {
+  font-weight: 600;
+  color: var(--shade2);
 }

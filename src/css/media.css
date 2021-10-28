@@ -104,4 +104,11 @@
     font-size: unset;
     line-height: unset;
   }
+
+  .small-post p {
+    display: none;
+  }
+  .bigpost-details {
+    width: 90%;
+  }
 }
