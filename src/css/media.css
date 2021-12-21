@@ -88,9 +88,21 @@
   .about-details {
     padding: 0 !important;
   }
+
+  .webinar-title {
+    font-size: 3rem;
+  }
 }
 
 @media (max-width: 1199.98px) {
+  .snippet-head-paragraph {
+    width: 85%;
+  }
+
+  .webinar-form {
+    margin-top: 5rem;
+  }
+
   .snippet-head-paragraph {
     width: 85%;
   }
@@ -110,5 +122,8 @@
   }
   .bigpost-details {
     width: 90%;
+  }
+  .webinar-history-p {
+    display: none;
   }
 }

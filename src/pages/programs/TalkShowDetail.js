@@ -1,0 +1,65 @@
+import React, { Component } from 'react'
+
+export default class TalkShowDetail extends Component {
+    render() {
+        return (
+            <>
+                <section id="wrapper">
+                    <div class="container-fluid webinar-detail">
+                        <h4 class="project-heading my-5">Talk Show</h4>
+                        <div class="webinar-overview">
+                            <div class="row">
+                                <div class="col-md-12 col-xl-6">
+                                    <img src="https://images.pexels.com/photos/669615/pexels-photo-669615.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="Project" />
+                                </div>
+                                <div class="col-md-12 col-xl-6 mb-5">
+                                    <h1 class="webinar-title mb-3">HOW TO MAKE WORLD BETTER ?</h1>
+                                    <h5 class="webinar-points mb-3"><span>Date:</span> May 5</h5>
+                                    <h5 class="webinar-points mb-3"><span>Time:</span> 2pm</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="webinar-indetails">
+                            <h1>Description</h1>
+                            <div class="row">
+                                <div class="col-md-12 col-xl-6">
+                                    <h6>
+                                        Quis accumsan eu, adipiscing nunc diam donec id nulla. Vulputate pharetra pretium elit aliquam tellus sed. Orci augue tellus quam nunc in ut nibh in. Elit tincidunt blandit sed mattis imperdiet tortor orci adipiscing. ipsum dolor sit amet, consectetur adipiscing elit. Quis accumsan eu, adipiscing nunc diam donec id nulla. Vulputate pharetra pretium elit aliquam tellus sed. Orci augue tellus quam nunc in ut nibh in. Elit tincidunt blandit sed mattis imperdiet tortor orci adipiscing. Vulputate pharetra pretium elit aliquam tellus sed. Orci augue tellus quam nunc in ut nibh in. Elit tincidunt blandit sed mattis imperdiet tortor orci adipiscing.
+                                    </h6>
+                                    <h6>
+                                        Quis accumsan eu, adipiscing nunc diam donec id nulla. Vulputate pharetra pretium elit aliquam tellus sed. Orci augue tellus quam nunc in ut nibh in. Elit tincidunt blandit sed mattis imperdiet tortor orci adipiscing. ipsum dolor sit amet, consectetur adipiscing elit. Quis accumsan eu, adipiscing nunc diam donec id nulla.
+                                    </h6>
+                                </div>
+                                <div class="col-md-12 col-xl-6">
+                                    <div class="webinar-form">
+                                        <h2>Link</h2>
+                                        <div class="form mt-5 text-center">
+                                            <div class="input-group mb-3">
+                                                <input type="text" class="form-control mb-0" placeholder="https://link" aria-label="https://link" aria-describedby="button-addon2" />
+                                                <button class="btn filled-btn" type="button" id="button-addon2">
+                                                    <svg width="25" viewBox="0 0 512 512">
+                                                        <rect x="128" y="128" width="336" height="336" rx="57" ry="57" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="32" />
+                                                        <path d="M383.5 128l.5-24a56.16 56.16 0 00-56-56H112a64.19 64.19 0 00-64 64v216a56.16 56.16 0 0056 56h24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" />
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                            <h3 class="my-5">Or</h3>
+                                            <button class="btn filled-btn" type="submit">
+                                                Listen Now
+                                                <span>
+                                                    <svg width="25" viewBox="0 0 512 512">
+                                                        <path d="M157.65 192H88a8 8 0 00-8 8v112a8 8 0 008 8h69.65a16 16 0 0110.14 3.63l91.47 75a8 8 0 0012.74-6.46V119.83a8 8 0 00-12.74-6.44l-91.47 75a16 16 0 01-10.14 3.61zM352 320c9.74-19.41 16-40.81 16-64 0-23.51-6-44.4-16-64M400 368c19.48-34 32-64 32-112s-12-77.7-32-112" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" />
+                                                    </svg>
+                                                </span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </>
+        )
+    }
+}

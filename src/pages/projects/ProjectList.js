@@ -15,7 +15,7 @@ export default class ProjectList extends Component {
     fetchProjects = async () => {
         try {
             const data = await fetch(
-                'http://localhost:8000/api/projects/'
+                'http://localhost:8000/api/pojects/'
             )
             const items = await data.json()
             this.setState({ section: items.meta.sections })
@@ -50,6 +50,8 @@ export default class ProjectList extends Component {
                         }}>
 
                         {project.project_set.map(proj => {
+                            var truncateDesc = proj.description.split(" ").splice(0, 20).join(" ") + "..."
+
                             return (
                                 <div className="item" key={proj.slug}>
                                     <Link to={`/projects/${proj.slug}`}>
@@ -59,7 +61,7 @@ export default class ProjectList extends Component {
                                             </div>
                                             <div className="card-body">
                                                 <h4>{proj.title}</h4>
-                                                <p className="small-text">{proj.description}</p>
+                                                <p className="small-text">{truncateDesc}</p>
                                             </div>
                                         </div>
                                     </Link>

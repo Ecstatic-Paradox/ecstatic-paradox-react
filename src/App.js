@@ -13,6 +13,9 @@ import TalkShow from "./pages/programs/TalkShow";
 import Courses from "./pages/courses/Courses";
 import ScrollToTop from "./ScrollToTop";
 import ArticalDetail from "./pages/publications/Article/ArticalDetail";
+import WebinarDetail from "./pages/programs/WebinarDetail";
+import TalkShowDetail from "./pages/programs/TalkShowDetail";
+import CourseDetail from "./pages/courses/CourseDetail";
 
 function App() {
   return (
@@ -30,8 +33,11 @@ function App() {
           <Route exact path="/articles" component={Articles} />
           <Route exact path="/articles/:slug" component={ArticalDetail} />
           <Route exact path="/webinars" component={Webinar} />
+          <Route exact path="/webinars/detail" component={WebinarDetail} />
           <Route exact path="/talk-shows" component={TalkShow} />
+          <Route exact path="/talk-shows/detail" component={TalkShowDetail} />
           <Route exact path="/courses" component={Courses} />
+          <Route exact path="/courses/detail" component={CourseDetail} />
         </Switch>
         <Footer />
       </BrowserRouter>

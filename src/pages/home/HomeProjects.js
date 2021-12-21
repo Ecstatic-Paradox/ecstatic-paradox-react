@@ -19,7 +19,7 @@ export default class HomeProjects extends Component {
     fetchProjects = async () => {
         try {
             const data = await fetch(
-                'http://localhost:8000/api/projects/'
+                'http://localhost:8000/api/pojects/'
             )
             const items = await data.json()
             this.setState({ projects: items.items })

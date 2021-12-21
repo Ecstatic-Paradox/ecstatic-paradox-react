@@ -639,3 +639,101 @@ a:hover {
   font-weight: 600;
   color: var(--shade2);
 }
+
+/* webinar */
+
+.webinar-live-card {
+  margin-bottom: 3rem;
+}
+.webinar-points {
+  line-height: 1.8rem;
+  font-weight: 300;
+}
+.webinar-points span {
+  font-weight: 500;
+}
+.webinar-live-card a {
+  text-decoration: none;
+  color: #000;
+  font-weight: 600;
+}
+
+.webinar-title {
+  font-size: 5.5rem;
+  font-weight: 600;
+}
+.project-description {
+  font-weight: 400;
+  line-height: 1.7rem;
+}
+.webinar-points {
+  line-height: 1.8rem;
+  font-weight: 300;
+}
+.webinar-detail span {
+  font-weight: 500;
+}
+.webinar-indetails {
+  margin-top: 8rem;
+}
+.project-heading {
+  position: relative;
+  color: var(--shade2);
+  margin-left: 1rem;
+}
+.project-heading::before {
+  content: " ";
+  position: absolute;
+  width: 0.3rem;
+  margin-left: -1rem;
+  height: 1.7rem;
+  background: var(--shade2);
+}
+.webinar-indetails h6 {
+  font-weight: 300;
+  line-height: 1.6rem;
+  margin-top: 2rem;
+}
+
+.webinar-form {
+  width: 100%;
+  padding: 3rem;
+  background-color: #fff;
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  padding: 1.3rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 1px;
+  color: #212529;
+  background-color: #f5f5f5;
+  background-clip: padding-box;
+  border: none;
+  appearance: none;
+  border-radius: 0;
+  transition: 0.4s;
+  margin-bottom: 3rem;
+}
+
+.form-control:focus {
+  color: #212529;
+  background-color: #eeeeee;
+  border-color: none;
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem rgb(13 110 253 / 0%);
+}
+
+/* courses */
+
+.snippet-head {
+  margin-bottom: 7rem;
+  text-align: center;
+}
+.snippet-head-paragraph {
+  width: 50%;
+  margin: 0 auto;
+}

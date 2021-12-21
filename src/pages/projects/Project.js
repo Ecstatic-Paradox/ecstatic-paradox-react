@@ -31,7 +31,7 @@ export default class Project extends Component {
 
                 </section>
 
-            </ >
+            </>
         )
     }
 }

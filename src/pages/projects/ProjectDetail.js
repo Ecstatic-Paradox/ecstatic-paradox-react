@@ -17,7 +17,7 @@ export default class ProjectDetail extends Component {
     fetchProject = async () => {
         try {
             const data = await fetch(
-                `http://localhost:8000/api/projects/${this.props.match.params.slug}`
+                `http://localhost:8000/api/pojects/${this.props.match.params.slug}`
             )
             const item = await data.json()
             this.setState({ project: item })
