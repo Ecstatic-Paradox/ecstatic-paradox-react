@@ -16,7 +16,6 @@ export default class BlogDetail extends Component {
                 `http://localhost:8000/api/blogs/${this.props.match.params.slug}`
             )
             const item = await data.json()
-            console.log(item)
             this.setState({ blog: item })
         } catch (err) {
             console.log('some error occured')
