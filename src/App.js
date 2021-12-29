@@ -16,6 +16,7 @@ import ArticalDetail from "./pages/publications/Article/ArticalDetail";
 import WebinarDetail from "./pages/programs/WebinarDetail";
 import TalkShowDetail from "./pages/programs/TalkShowDetail";
 import CourseDetail from "./pages/courses/CourseDetail";
+import BlogDetail from "./pages/publications/Blog/BlogDetail";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
           <Route exact path="/projects" component={Project} />
           <Route exact path="/projects/:slug" component={ProjectDetail} />
           <Route exact path="/blogs" component={Blogs} />
+          <Route exact path="/blogs/:slug" component={BlogDetail} />
           <Route exact path="/research-papers" component={ResearchPapers} />
           <Route exact path="/articles" component={Articles} />
           <Route exact path="/articles/:slug" component={ArticalDetail} />

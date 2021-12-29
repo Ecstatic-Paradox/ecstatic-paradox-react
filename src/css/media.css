@@ -92,6 +92,14 @@
   .webinar-title {
     font-size: 3rem;
   }
+
+  .blog-detail-content img {
+    height: unset;
+  }
+
+  .blog-detail-head {
+    flex-wrap: wrap;
+  }
 }
 
 @media (max-width: 1199.98px) {
