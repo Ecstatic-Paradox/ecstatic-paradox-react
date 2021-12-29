@@ -15,7 +15,7 @@ export default class ProjectList extends Component {
     fetchProjects = async () => {
         try {
             const data = await fetch(
-                'http://localhost:8000/api/pojects/'
+                'http://localhost:8000/api/projects/'
             )
             const items = await data.json()
             this.setState({ section: items.meta.sections })

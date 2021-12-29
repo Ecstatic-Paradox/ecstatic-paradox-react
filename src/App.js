@@ -5,7 +5,7 @@ import Project from './pages/projects/Project';
 import ProjectDetail from './pages/projects/ProjectDetail';
 import Navbar from './Layouts/Navbar';
 import Footer from './Layouts/Footer';
-import Blogs from "./pages/publications/Blogs";
+import Blogs from "./pages/publications/Blog/Blogs";
 import ResearchPapers from "./pages/publications/ResearchPapers";
 import Articles from "./pages/publications/Article/Articles";
 import Webinar from "./pages/programs/Webinar";
