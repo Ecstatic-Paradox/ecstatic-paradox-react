@@ -17,6 +17,7 @@ import WebinarDetail from "./pages/programs/WebinarDetail";
 import SymposiumDetail from "./pages/programs/SymposiumDetail";
 import CourseDetail from "./pages/courses/CourseDetail";
 import BlogDetail from "./pages/publications/Blog/BlogDetail";
+import ResearchDetail from "./pages/publications/ResearchDetail";
 
 function App() {
   return (
@@ -31,7 +32,8 @@ function App() {
           <Route exact path="/projects/:slug" component={ProjectDetail} />
           <Route exact path="/blogs" component={Blogs} />
           <Route exact path="/blogs/:slug" component={BlogDetail} />
-          <Route exact path="/research-papers" component={ResearchPapers} />
+          <Route exact path="/research-papers/" component={ResearchPapers} />
+          <Route exact path="/research-papers/detail" component={ResearchDetail} />
           <Route exact path="/articles" component={Articles} />
           <Route exact path="/articles/:slug" component={ArticalDetail} />
           <Route exact path="/webinars" component={Webinar} />
