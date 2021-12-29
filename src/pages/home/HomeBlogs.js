@@ -34,7 +34,6 @@ export default class HomeBlogs extends Component {
             }) : ''
 
             return (
-
                 <div key={item.meta.slug} className="blog-card">
                     <Link to={`/blogs/${item.meta.slug}`}>
                         <div className="blog-img">

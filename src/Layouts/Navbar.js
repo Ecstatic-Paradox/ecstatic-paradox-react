@@ -90,8 +90,8 @@ function Navbar() {
                     </Link>
                   </li>
                   <li>
-                    <Link className="dropdown-item" to="/talk-shows">
-                      Talk Shows
+                    <Link className="dropdown-item" to="/symposiums">
+                      Symposium
                     </Link>
                   </li>
                 </ul>
