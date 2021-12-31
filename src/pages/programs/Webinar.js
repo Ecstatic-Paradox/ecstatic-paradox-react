@@ -35,18 +35,18 @@ export default class Webinar extends Component {
 
                         <div className="col p-1">
                             <h3>{item.meta.title}</h3>
-                            <h5 className="webinar-points mt-4 mb-3"><span>Date:</span> {item.date}</h5>
-                            <h5 className="webinar-points mb-3"><span>Time:</span> 2pm</h5>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem corrupti delectus hic a, cupiditate ratione eveniet quos repellat...</p>
+                            {/* <h5 className="webinar-points mt-4 mb-3"><span>Date:</span> {new Date(item.program_date).toLocaleDateString('np-NP', { year: 'numeric', month: 'short', day: 'numeric' })}</h5> */}
+                            <h6 className="webinar-points mb-3"><span>Time:</span> {new Date(item.program_date).toLocaleTimeString('np-NP', { year: 'numeric', month: 'short', day: 'numeric' })}</h6>
+                            <p>{item.description.length <= 20 ? item.description : item.description.split(" ").splice(0, 20).join(" ") + "..."}</p>
                             <div className="webinar-card-btn d-flex align-items-center mt-5">
                                 <Link to={`/webinars/${item.meta.id}`}><button type="button" className="btn filled-btn me-4">View Details</button></Link>
-                                {/* <a href="#">
-                                    Copy Link
+                                <a href={item.youtube_link} target="_blank" rel="noopener noreferrer">
+                                    Go to link
                                     <svg width="25" viewBox="0 0 512 512">
                                         <rect x="128" y="128" width="336" height="336" rx="57" ry="57" fill="none" stroke="currentColor" strokeLinejoin="round" strokeWidth="32"></rect>
                                         <path d="M383.5 128l.5-24a56.16 56.16 0 00-56-56H112a64.19 64.19 0 00-64 64v216a56.16 56.16 0 0056 56h24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="32"></path>
                                     </svg>
-                                </a> */}
+                                </a>
                             </div>
                         </div>
 

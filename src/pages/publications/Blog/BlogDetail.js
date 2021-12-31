@@ -36,7 +36,7 @@ export default class BlogDetail extends Component {
                 <h4 className="project-heading my-5">Case Study</h4>
                 <div className="blog-detail-head w-100 d-flex align-items-center my-4">
                     <div className="avatar d-flex align-items-center">
-                        <img src="https://images.pexels.com/photos/9396342/pexels-photo-9396342.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="Avatar" />
+                        <img src={`http://localhost:8000${item.meta.owner.avatar}`} alt="Avatar" />
                         <h5 className="ms-3">{item.meta.owner.first_name} {item.meta.owner.last_name}</h5>
                     </div>
                     <div className="d-flex align-items-center ms-5">
@@ -73,7 +73,7 @@ export default class BlogDetail extends Component {
 
 
                 <div className="blog-detail-content">
-                    <img src="https://images.pexels.com/photos/1287145/pexels-photo-1287145.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="blog" />
+                    <img className="mb-5" src={`http://localhost:8000${item.thumbnail.meta.download_url}`} alt="blog" />
 
                     {body}
 

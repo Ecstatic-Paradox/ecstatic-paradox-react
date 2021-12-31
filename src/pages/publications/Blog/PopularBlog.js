@@ -16,7 +16,7 @@ export default class PopularBlog extends Component {
                     <Link to={`/blogs/${item.meta.slug}`}>
                         <div className="row">
                             <div className="col-md-5">
-                                <img src="https://images.pexels.com/photos/4144179/pexels-photo-4144179.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" className="card-img-top" alt="Blog" />
+                                <img src={`http://localhost:8000${item.thumbnail.meta.download_url}`} className="card-img-top" alt="Blog" />
                             </div>
                             <div className="col p-1">
                                 <h4>{item.meta.title}</h4>
@@ -40,7 +40,7 @@ export default class PopularBlog extends Component {
                                         <span>{item.view_count} views</span>
                                     </div>
                                 </div>
-                                <p className="small-text" dangerouslySetInnerHTML={{ __html: desc[0].split(" ").splice(0, 20).join(" ") + "..." }}></p>
+                                <p className="small-text" dangerouslySetInnerHTML={{ __html: desc[1].length <= 20 ? desc[1].split(" ").splice(0, 20).join(" ") : desc[1] }}></p>
                             </div>
                         </div>
                     </Link>

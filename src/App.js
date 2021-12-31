@@ -30,10 +30,10 @@ function App() {
           <Route exact path="/about" component={About} />
           <Route exact path="/projects" component={Project} />
           <Route exact path="/projects/:slug" component={ProjectDetail} />
-          <Route exact path="/blogs" component={Blogs} />
+          <Route exact path="/blogs/" component={Blogs} />
           <Route exact path="/blogs/:slug" component={BlogDetail} />
           <Route exact path="/research-papers/" component={ResearchPapers} />
-          <Route exact path="/research-papers/detail" component={ResearchDetail} />
+          <Route exact path="/research-papers/:slug" component={ResearchDetail} />
           <Route exact path="/articles" component={Articles} />
           <Route exact path="/articles/:slug" component={ArticalDetail} />
           <Route exact path="/webinars" component={Webinar} />

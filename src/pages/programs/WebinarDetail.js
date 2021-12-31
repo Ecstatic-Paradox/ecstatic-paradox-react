@@ -34,8 +34,8 @@ export default class WebinarDetail extends Component {
 
                         <div className="col-md-12 col-xl-6 mb-5">
                             <h4 className="webinar-title mt-4 mb-3">{item.meta.title}</h4>
-                            <h5 className="webinar-points mb-3"><span>Date:</span> {item.date}</h5>
-                            <h5 className="webinar-points mb-3"><span>Time:</span> 2pm</h5>
+                            <h6 className="webinar-points mb-3"><span>Time:</span> {new Date(item.program_date).toLocaleTimeString('np-NP', { year: 'numeric', month: 'short', day: 'numeric' })}</h6>
+
                         </div>
 
                     </div>

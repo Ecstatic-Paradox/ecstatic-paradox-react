@@ -17,7 +17,6 @@ export default class Courses extends Component {
                 `http://localhost:8000/api/courses/`
             )
             const item = await data.json()
-            console.log(item.items)
             this.setState({ courses: item.items })
         } catch (err) {
             console.log('some error occured')
@@ -37,7 +36,7 @@ export default class Courses extends Component {
                             </div>
                             <div className="card-body">
                                 <h4>{item.meta.title}</h4>
-                                <p className="small-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <p className="small-text">{item.description.length <= 20 ? item.description : item.description.split(" ").splice(0, 20).join(" ") + "..."}</p>
                             </div>
                         </div>
                     </Link>

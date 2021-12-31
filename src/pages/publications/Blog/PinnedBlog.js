@@ -15,7 +15,7 @@ export default class PinnedBlog extends Component {
                 <div key={item.meta.slug} className="big-post-wrap">
 
                     <div className="blog-img">
-                        <img src="https://images.pexels.com/photos/4144179/pexels-photo-4144179.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" className="card-img-top" alt="Blog" />
+                        <img src={`http://localhost:8000${item.thumbnail.meta.download_url}`} className="card-img-top" alt="Blog" />
                         {item.tags.map((i, index) => <span key={index} className="badge bg-primary">{i}</span>)}
                     </div>
 
@@ -43,7 +43,7 @@ export default class PinnedBlog extends Component {
                                         <span>{item.view_count} views</span>
                                     </div>
                                 </div>
-                                <p dangerouslySetInnerHTML={{ __html: desc[0].split(" ").splice(0, 20).join(" ") + "..." }}></p>
+                                <p dangerouslySetInnerHTML={{ __html: desc[1].length <= 20 ? desc[1].split(" ").splice(0, 20).join(" ") : desc[1] }}></p>
                             </div>
                         </Link>
 
