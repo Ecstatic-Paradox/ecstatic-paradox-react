@@ -32,7 +32,7 @@ export default class ResearchPapers extends Component {
                     <div className="research-overview">
                         <div className="row">
                             <div className="col-md-12 col-xl-7">
-                                <img src="https://images.pexels.com/photos/669615/pexels-photo-669615.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="Project" />
+                                <img src={`http://localhost:8000${item.thumbnail.meta.download_url}`} alt="Project" />
                             </div>
 
                             <div className="col-md-12 col-xl-5 mb-5">
@@ -116,7 +116,7 @@ export default class ResearchPapers extends Component {
                                 </div>
 
                                 <div className="col-md-12 col-xl-7">
-                                    <img src="https://images.pexels.com/photos/669615/pexels-photo-669615.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="Project" />
+                                    <img src={`http://localhost:8000${item.thumbnail.meta.download_url}`} alt="Project" />
                                 </div>
 
                             </div>
