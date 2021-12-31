@@ -13,7 +13,7 @@ export default class FoundingMembers extends Component {
     fetchProjects = async () => {
         try {
             const data = await fetch(
-                'http://localhost:8000/api/about/core-members'
+                'http://localhost:8000/api/about/coremembers'
             )
             const items = await data.json()
             this.setState({ members: items })

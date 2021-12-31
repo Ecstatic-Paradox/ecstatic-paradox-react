@@ -7,9 +7,9 @@ function Navbar() {
     <>
       <nav className="navbar navbar-expand-lg navbar-light">
         <div className="container-fluid">
-          <a className="navbar-brand" href="index.html">
+          <Link className="navbar-brand" to="/">
             <img src={logo} alt="Paradox-Logo" />
-          </a>
+          </Link>
           <button
             className="navbar-toggler"
             type="button"

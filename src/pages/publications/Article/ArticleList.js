@@ -31,7 +31,7 @@ export default class ArticleList extends Component {
                     <Link to={`/articles/${article.slug}`}>
                         <div className="article-card">
                             <div className="article-img">
-                                <img src={article.thumbnail} className="card-img-top article-image" alt="Blog" />
+                                <img src={`http://localhost:8000${article.thumbnail.meta.download_url}`} className="card-img-top article-image" alt="Blog" />
                             </div>
                             <div className="card-body">
                                 <div className="article-stats w-100 d-flex justify-content-between align-items-center mb-4">

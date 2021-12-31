@@ -34,7 +34,7 @@ export default class HomeProjects extends Component {
         const projects = this.state.projects.map(proj => {
             return (
                 <SwiperSlide key={proj.id} >
-                    <div className="slide-card" style={{ backgroundImage: `linear-gradient(rgb(20 20 40 / 30%), rgb(20 20 40 / 30%)), url(${proj.thumbnail})` }}>
+                    <div className="slide-card" style={{ backgroundImage: `linear-gradient(rgb(20 20 40 / 30%), rgb(20 20 40 / 30%)), url(${`http://localhost:8000${proj.thumbnail.meta.download_url}`})` }}>
                         <div className="slide-card-body">
                             <Link to={`/projects/${proj.slug}`}><button type="button" className="btn filled-btn">See More</button></Link>
                             <h3 className="medium-text">{proj.title}</h3>

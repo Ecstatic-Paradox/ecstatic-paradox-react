@@ -57,7 +57,7 @@ export default class ProjectList extends Component {
                                     <Link to={`/projects/${proj.slug}`}>
                                         <div className="project-card">
                                             <div className="blog-img">
-                                                <img src={proj.thumbnail} className="card-img-top" alt="Blog" />
+                                                <img src={`http://localhost:8000${proj.thumbnail.meta.download_url}`} className="card-img-top" alt="Blog" />
                                             </div>
                                             <div className="card-body">
                                                 <h4>{proj.title}</h4>
