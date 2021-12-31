@@ -37,7 +37,14 @@ export default class ResearchDetail extends Component {
                     <div className="col-xl-8">
                         <h4 className="project-heading my-5">Research Paper</h4>
                         <div className="blog-detail-head w-100 d-flex align-items-center my-4">
-                            <div className="d-flex align-items-center">
+                            <div className="d-flex align-items-center ">
+                                {item.author.map((author, i) => {
+                                    return (
+                                        <span key={i} className="mb-0 ms-3"> {author.first_name} {author.last_name} </span>
+                                    )
+                                })}
+                            </div>
+                            <div className="d-flex align-items-center ms-5">
                                 <span className="me-2">
                                     <svg width="25" viewBox="0 0 512 512">
                                         <rect x="48" y="80" width="416" height="384" rx="48" fill="none" stroke="currentColor" strokeLinejoin="round" strokeWidth="30"></rect>
@@ -80,7 +87,7 @@ export default class ResearchDetail extends Component {
 
                     <div className="col-xl-4">
                         <div className="tab-navigation">
-                            <nav>
+                            {/* <nav>
                                 <div className="nav nav-tabs" id="nav-tab" role="tablist">
                                     <button className="nav-link active" id="nav-topic-tab" data-bs-toggle="tab" data-bs-target="#nav-topic" type="button" role="tab" aria-controls="nav-topic" aria-selected="true">Topic</button>
                                     <button className="nav-link" id="nav-images-tab" data-bs-toggle="tab" data-bs-target="#nav-images" type="button" role="tab" aria-controls="nav-images" aria-selected="false">Images</button>
@@ -103,7 +110,7 @@ export default class ResearchDetail extends Component {
                                     Vulputate pharetra pretium elit aliquam tellus sed. Orci augue tellus quam nunc in ut nibh in. Elit tincidunt blandit
                                     sed mattis imperdiet tortor orci adipiscing. Quis accumsan eu, adipiscing nunc diam donec id nulla.
                                 </div>
-                            </div>
+                            </div> */}
                         </div>
                         <div className="research-author text-center">
                             <h2>Authors info</h2>

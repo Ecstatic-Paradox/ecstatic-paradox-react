@@ -321,7 +321,7 @@ a:hover {
 @supports (display: grid) {
   .gallery-wrap {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
     grid-gap: 1rem;
   }
 
@@ -497,7 +497,7 @@ a:hover {
 @supports (display: grid) {
   .core-member-wrap {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(20em, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
     grid-gap: 1rem;
   }
 

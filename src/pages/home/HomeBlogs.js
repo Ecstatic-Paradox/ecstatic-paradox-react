@@ -49,7 +49,7 @@ export default class HomeBlogs extends Component {
                                 <span>{item.view_count} views</span>
                             </div>
                             <h4>{item.meta.title}</h4>
-                            <p className="small-text" dangerouslySetInnerHTML={{ __html: desc[0].split(" ").splice(0, 20).join(" ") + "..." }}></p>
+                            <p className="small-text" dangerouslySetInnerHTML={{ __html: desc[1].length <= 20 ? desc[1].split(" ").splice(0, 20).join(" ") : desc[1] }}></p>
                         </div>
                     </Link>
                 </div>
