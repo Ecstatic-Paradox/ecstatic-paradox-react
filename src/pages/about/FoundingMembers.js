@@ -2,29 +2,9 @@ import React, { Component } from 'react'
 
 export default class FoundingMembers extends Component {
 
-    state = {
-        members: []
-    }
-
-    componentDidMount() {
-        this.fetchProjects();
-    }
-
-    fetchProjects = async () => {
-        try {
-            const data = await fetch(
-                'http://localhost:8000/api/about/coremembers'
-            )
-            const items = await data.json()
-            this.setState({ members: items })
-        } catch (err) {
-            console.log('some error occured')
-        }
-    }
-
     render() {
 
-        const members = this.state.members.map((mem, index) => {
+        const members = this.props.members.map((mem, index) => {
             return (
                 <div className="core-member-item" key={index}>
                     <img className="member-image" src={`http://localhost:8000${mem.avatar}`} alt="back view of woman wearing a backpack and beanie waiting to cross the road on a busy street at night in New York City, USA" />

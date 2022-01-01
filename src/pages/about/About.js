@@ -5,6 +5,29 @@ import GeneralMembers from './GeneralMembers';
 
 
 export default class About extends Component {
+
+    state = {
+        coremembers: [],
+        members: []
+    }
+
+    componentDidMount() {
+        this.fetchProjects();
+    }
+
+    fetchProjects = async () => {
+        try {
+            const data = await fetch(
+                'http://localhost:8000/api/about/coremembers'
+            )
+            const items = await data.json()
+            this.setState({ coremembers: items.filter(i => i.is_core_member) })
+            this.setState({ members: items.filter(i => !i.is_core_member) })
+        } catch (err) {
+            console.log('some error occured')
+        }
+    }
+
     render() {
         return (
             <React.Fragment>
@@ -90,10 +113,10 @@ export default class About extends Component {
                     <div className="about-cta container-fluid">
                         <h1 className="title text-center exception">MEET THE CREW</h1>
                         <h3 className="medium-text mb-5">Founding Members</h3>
-                        <FoundingMembers />
+                        <FoundingMembers members={this.state.coremembers} />
 
                         <h3 className="medium-text mb-5">General Members</h3>
-                        <GeneralMembers />
+                        <GeneralMembers members={this.state.members} />
                     </div>
                 </section>
             </React.Fragment>

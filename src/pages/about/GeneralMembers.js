@@ -7,29 +7,28 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 
-function createData(name, country, spectrum, email) {
-    return { name, country, spectrum, email };
+function createData(name, designation, department, contact) {
+    return { name, designation, department, contact };
 }
 
-const rows = [
-    createData('John Doe', 'Nepal', 'Web Department', 'ohndoe@gmail.com'),
-    createData('Pratik Bashyal', 'Nepal', 'Web Department', 'ohndoe@gmail.com'),
-    createData('Suman Acharya', 'Nepal', 'Web Department', 'ohndoe@gmail.com'),
-    createData('Sudarshan Chapagain', 'Nepal', 'Web Department', 'ohndoe@gmail.com'),
+var rows = [
+
 ];
 
 
 export default class GeneralMembers extends Component {
+
     render() {
+        rows = this.props.members.map(mem => createData(mem.first_name + ' ' + mem.last_name, mem.designation, mem.user_department, mem.fb_profile_link ? mem.fb_profile_link : 'Not Available'))
         return (
             <TableContainer component={Paper}>
                 <Table sx={{ minWidth: 500 }} size="medium" aria-label="a dense table">
                     <TableHead>
                         <TableRow>
                             <TableCell>Name</TableCell>
-                            <TableCell align="center">Spectrum</TableCell>
-                            <TableCell align="center">Country</TableCell>
-                            <TableCell align="center">Email</TableCell>
+                            <TableCell align="center">Designation</TableCell>
+                            <TableCell align="center">Department</TableCell>
+                            <TableCell align="center">Contact</TableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
@@ -41,9 +40,9 @@ export default class GeneralMembers extends Component {
                                 <TableCell component="th" scope="row">
                                     {row.name}
                                 </TableCell>
-                                <TableCell align="center">{row.spectrum}</TableCell>
-                                <TableCell align="center">{row.country}</TableCell>
-                                <TableCell align="center">{row.email}</TableCell>
+                                <TableCell align="center">{row.designation}</TableCell>
+                                <TableCell align="center">{row.department}</TableCell>
+                                <TableCell align="center">{row.contact}</TableCell>
                             </TableRow>
                         ))}
                     </TableBody>
