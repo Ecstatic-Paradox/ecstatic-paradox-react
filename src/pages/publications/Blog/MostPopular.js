@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 
-
-
 export default class MostPopular extends Component {
     render() {
         var item = this.props.item ? this.props.item : ''
@@ -54,3 +52,4 @@ export default class MostPopular extends Component {
         )
     }
 }
+
