@@ -5,11 +5,11 @@ export default class PinnedBlog extends Component {
     render() {
         var items = this.props.popular ? this.props.popular : ''
         var content = items.filter(item => item.is_pinned).map(item => {
-            var desc = item ? item.content.map(con => {
-                return (
-                    con.type === 'paragraph' ? con.value : ''
-                )
-            }) : ''
+            // var desc = item ? item.content.map(con => {
+            //     return (
+            //         con.type === 'paragraph' ? con.value : ''
+            //     )
+            // }) : ''
             return (
 
                 <div key={item.meta.slug} className="big-post-wrap">
@@ -43,7 +43,7 @@ export default class PinnedBlog extends Component {
                                         <span>{item.view_count} views</span>
                                     </div>
                                 </div>
-                                <p dangerouslySetInnerHTML={{ __html: desc[1].length <= 20 ? desc[1].split(" ").splice(0, 20).join(" ") : desc[1] }}></p>
+                                {/* <p dangerouslySetInnerHTML={{ __html: desc[1].length <= 20 ? desc[1].split(" ").splice(0, 20).join(" ") : desc[1] }}></p> */}
                             </div>
                         </Link>
 

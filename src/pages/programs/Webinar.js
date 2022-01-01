@@ -37,7 +37,7 @@ export default class Webinar extends Component {
                             <h3>{item.meta.title}</h3>
                             {/* <h5 className="webinar-points mt-4 mb-3"><span>Date:</span> {new Date(item.program_date).toLocaleDateString('np-NP', { year: 'numeric', month: 'short', day: 'numeric' })}</h5> */}
                             <h6 className="webinar-points mb-3"><span>Time:</span> {new Date(item.program_date).toLocaleTimeString('np-NP', { year: 'numeric', month: 'short', day: 'numeric' })}</h6>
-                            <p>{item.description.length <= 20 ? item.description : item.description.split(" ").splice(0, 20).join(" ") + "..."}</p>
+                            <p>{item.description.split(" ").splice(0, 20).join(" ") + "..."}</p>
                             <div className="webinar-card-btn d-flex align-items-center mt-5">
                                 <Link to={`/webinars/${item.meta.id}`}><button type="button" className="btn filled-btn me-4">View Details</button></Link>
                                 <a href={item.youtube_link} target="_blank" rel="noopener noreferrer">

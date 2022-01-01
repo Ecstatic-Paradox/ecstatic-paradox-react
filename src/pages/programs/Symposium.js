@@ -35,7 +35,7 @@ export default class Symposium extends Component {
                             <h3>{item.meta.title}</h3>
                             <h5 className="webinar-points mt-4 mb-3"><span>Date:</span> {item.date}</h5>
                             <h5 className="webinar-points mb-3"><span>Time:</span> 2pm</h5>
-                            <p>{item.description.length <= 20 ? item.description : item.description.split(" ").splice(0, 20).join(" ") + "..."}</p>
+                            <p>{item.description.split(" ").splice(0, 20).join(" ") + "..."}</p>
                             <div className="webinar-card-btn d-flex align-items-center mt-5">
                                 <Link to={`/symposiums/${item.meta.id}`}><button type="button" className="btn filled-btn me-4">View Details</button></Link>
                                 <a href={item.youtube_link} target="_blank" rel="noopener noreferrer">
@@ -56,7 +56,7 @@ export default class Symposium extends Component {
             <>
                 <section id="wrapper">
                     <div className="about-hero hero-section">
-                        <h1 className="big-text">Talk Shows</h1>
+                        <h1 className="big-text">Symposium</h1>
                         <p className="small-text">
                             Lorem ipsum dolor sit amet consectetur adipisicing elit,<br />
                             Cupiditate minus placeat sapiente repellat in iure quas iusto.

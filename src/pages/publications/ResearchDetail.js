@@ -1,5 +1,20 @@
 import React, { Component } from 'react'
 
+function Content(item) {
+    let item_tag
+    switch (item.type) {
+        case 'heading':
+            item_tag = <h1>{item.value}</h1>;
+            break;
+        default:
+            var cor = item.value
+            item_tag = <div dangerouslySetInnerHTML={{ __html: cor.replaceAll('src="/media', 'src="http://localhost:8000/media') }}></div>;
+            break;
+    }
+    return item_tag
+}
+
+
 export default class ResearchDetail extends Component {
 
     state = {
@@ -27,7 +42,7 @@ export default class ResearchDetail extends Component {
         var item = this.state.paper ? this.state.paper : ''
         const body = item ? item.content.map((con, index) => {
             return (
-                con.type === 'heading' ? <React.Fragment key={index} ><h1 >{con.value}</h1><br /> </React.Fragment> : <React.Fragment key={index} ><div className='mt-5' dangerouslySetInnerHTML={{ __html: con.value }}></div><br /></React.Fragment>
+                <React.Fragment key={index}>{Content(con)}<br /></React.Fragment>
             )
         }) : ''
 

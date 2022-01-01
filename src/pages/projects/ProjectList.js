@@ -50,7 +50,7 @@ export default class ProjectList extends Component {
                         }}>
 
                         {project.project_set.map(proj => {
-                            var truncateDesc = proj.description.length <= 20 ? proj.description : proj.description.split(" ").splice(0, 20).join(" ") + "..."
+                            var truncateDesc = proj.description
 
                             return (
                                 <div className="item" key={proj.slug}>

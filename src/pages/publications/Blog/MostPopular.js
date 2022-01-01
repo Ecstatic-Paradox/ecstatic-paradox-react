@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom'
 export default class MostPopular extends Component {
     render() {
         var item = this.props.item ? this.props.item : ''
-        var desc = item ? item.content.map(con => {
-            return (
-                con.type === 'paragraph' ? con.value : ''
-            )
-        }) : ''
+        // var desc = item ? item.content.map(con => {
+        //     return (
+        //         con.type === 'paragraph' ? con.value : ''
+        //     )
+        // }) : ''
 
         var content = item ? <div className="col-md-12 col-xl-6">
             <Link to={`/blogs/${item.meta.slug}`}>
@@ -39,7 +39,7 @@ export default class MostPopular extends Component {
                             </div>
                         </div>
                         <h4>{item.meta.title}</h4>
-                        <p className="small-text" dangerouslySetInnerHTML={{ __html: desc[1].length <= 20 ? desc[1].split(" ").splice(0, 20).join(" ") : desc[1] }}></p>
+                        {/* <p className="small-text" dangerouslySetInnerHTML={{ __html: desc[1].length <= 20 ? desc[1].split(" ").splice(0, 20).join(" ") : desc[1] }}></p> */}
                     </div>
                 </div>
             </Link>

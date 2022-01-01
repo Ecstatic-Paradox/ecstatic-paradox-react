@@ -1,17 +1,19 @@
 import { Link } from 'react-router-dom'
 import React, { Component } from 'react'
 
+
+
 export default class LatestBlog extends Component {
     render() {
         var items = this.props.item ? this.props.item : ''
         const content = items.map(item => {
-            var desc = item ? item.content.map(con => {
-                return (
-                    con.type === 'paragraph' ? con.value : ''
+            // var desc = item ? item.content.map(con => {
+            //     return (
+            //         con.type === 'paragraph' ? con.value : ''
 
-                )
-            }
-            ) : ''
+            //     )
+            // }
+            // ) : ''
             return (
                 <div key={item.meta.slug} className="col">
                     <Link to={`/blogs/${item.meta.slug}`}>
@@ -31,7 +33,7 @@ export default class LatestBlog extends Component {
                             </div>
                             <div className="card-body">
                                 <h4>{item.meta.title}</h4>
-                                <p className="small-text" dangerouslySetInnerHTML={{ __html: desc[1].length <= 20 ? desc[1].split(" ").splice(0, 20).join(" ") : desc[1] }}></p>
+                                {/* <p className="small-text" dangerouslySetInnerHTML={{ __html: desc[1].length <= 20 ? desc[1].split(" ").splice(0, 20).join(" ") : desc[1] }}></p> */}
                             </div>
                         </div>
                     </Link>

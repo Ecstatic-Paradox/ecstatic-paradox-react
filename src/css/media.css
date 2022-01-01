@@ -29,6 +29,11 @@
   .article-card {
     margin-right: unset;
   }
+
+  .gallery-wrap,
+  .core-member-wrap {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 767.98px) {
