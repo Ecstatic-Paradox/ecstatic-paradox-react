@@ -4,6 +4,8 @@ import MostPopular from './MostPopular'
 import PinnedBlog from './PinnedBlog'
 import PopularBlog from './PopularBlog'
 
+
+
 export default class Blogs extends Component {
 
     state = {
@@ -54,31 +56,33 @@ export default class Blogs extends Component {
                     </div>
                 </section>
 
-                <section id="wrapper mb-5">
-                    <div className="container">
-                        <PinnedBlog popular={this.state.popular} />
-                    </div>
-                </section>
+                <section className='blogs-wrapper'>
 
-                <section id="wrapper">
-                    <div className="container-fluid">
-                        <h2 className="mb-5 fw-bold">Popular Posts</h2>
-                        <div className="row">
-                            <MostPopular item={this.state.popular[0]} />
-                            <PopularBlog item={this.state.popular} />
+                    <section id="wrapper mb-5">
+                        <div className="container">
+                            <PinnedBlog popular={this.state.popular} />
                         </div>
-                    </div>
-                </section>
+                    </section>
 
-                <section id="wrapper">
-                    <div className="container-fluid">
-                        <h2 className="mb-5 fw-bold">Latest Posts</h2>
-                        <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-                            <LatestBlog item={this.state.latest} />
+                    <section id="wrapper">
+                        <div className="container-fluid">
+                            <h2 className="mb-5 fw-bold">Popular Posts</h2>
+                            <div className="row">
+                                <MostPopular item={this.state.popular[0]} />
+                                <PopularBlog item={this.state.popular} />
+                            </div>
                         </div>
-                    </div>
-                </section>
+                    </section>
 
+                    <section id="wrapper">
+                        <div className="container-fluid">
+                            <h2 className="mb-5 fw-bold">Latest Posts</h2>
+                            <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                                <LatestBlog item={this.state.latest} />
+                            </div>
+                        </div>
+                    </section>
+                </section>
 
             </>
         )

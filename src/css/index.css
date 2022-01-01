@@ -255,8 +255,16 @@ a:hover {
   justify-content: space-between;
 }
 
+.blogs-wrapper a {
+  color: unset;
+}
+
 .blog-card {
   margin: 1rem;
+}
+
+.blog-card a {
+  color: unset;
 }
 
 .blog-img {
@@ -267,7 +275,7 @@ a:hover {
   width: 100%;
   object-fit: cover;
   height: 400px;
-  filter: brightness(0.7);
+  filter: brightness(0.98);
 }
 
 .blog-img span {
@@ -567,6 +575,12 @@ a:hover {
 .project-indetails {
   margin-top: 8rem;
 }
+
+.project-indetails iframe {
+  width: 100%;
+  height: 60vh;
+}
+
 .project-indetails h6 {
   font-weight: 300;
   line-height: 1.7rem;
@@ -633,6 +647,15 @@ a:hover {
   background-color: #ffffff;
   margin: 0 auto;
   transform: translateY(-10rem);
+}
+
+.bigpost-details a {
+  width: 100%;
+}
+
+.blog-detail-content iframe {
+  width: 100%;
+  height: 60vh;
 }
 
 .small-post h4 {
@@ -742,6 +765,8 @@ a:hover {
   width: 4rem;
   height: 4rem;
   border-radius: 50%;
+  object-fit: cover;
+  object-position: top;
 }
 .blog-detail-content h6 {
   font-weight: 300;
