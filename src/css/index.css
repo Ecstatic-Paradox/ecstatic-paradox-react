@@ -853,4 +853,5 @@ a:hover {
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 2rem;
+  object-position: top;
 }

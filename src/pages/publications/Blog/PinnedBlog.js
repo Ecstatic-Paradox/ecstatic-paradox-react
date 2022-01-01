@@ -22,7 +22,7 @@ export default class PinnedBlog extends Component {
                     <div className="bigpost-details">
                         <Link to={`/blogs/${item.meta.slug}`}>
                             <div className="card-body text-center">
-                                <h3>{item.meta.title}</h3>
+                                <h4>{item.meta.title}</h4>
                                 <div className="w-100 d-flex justify-content-around  align-items-center my-4">
                                     <div className="d-flex align-items-center">
                                         <span className="me-2">
