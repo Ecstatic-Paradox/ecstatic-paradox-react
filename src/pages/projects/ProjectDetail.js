@@ -1,13 +1,23 @@
 import React, { Component } from 'react'
 
+function Content(item) {
+    let item_tag
+    switch (item.type) {
+        case 'heading':
+            item_tag = <h1>{item.value}</h1>;
+            break;
+        default:
+            var cor = item.value
+            item_tag = <div dangerouslySetInnerHTML={{ __html: cor.replaceAll('src="/media', 'src="http://localhost:8000/media') }}></div>;
+            break;
+    }
+    return item_tag
+}
+
 export default class ProjectDetail extends Component {
 
-    constructor(props) {
-        super(props)
-
-        this.state = {
-            project: null
-        }
+    state = {
+        project: null,
     }
 
     componentDidMount() {
@@ -22,18 +32,22 @@ export default class ProjectDetail extends Component {
             const item = await data.json()
             this.setState({ project: item })
         } catch (err) {
-            console.log('some error occured')
+            console.log(err)
         }
     }
 
+
     render() {
+
         const project = this.state.project ? this.state.project : ''
         const team = project ? project.meta.sections[0] : ''
-        const contents = project ? project.content.map(con => {
+
+        const contents = project ? project.content.map((con, index) => {
             return (
-                con.type === 'heading' ? <React.Fragment key={con.id}><h1 >{con.value}</h1><br /> </React.Fragment> : <React.Fragment key={con.id}><div dangerouslySetInnerHTML={{ __html: con.value }}></div><br /></React.Fragment>
+                <React.Fragment key={index}>{Content(con)}<br /></React.Fragment>
             )
         }) : ''
+
 
         const body = project ? <section id="wrapper">
             <div className="container-fluid project-case-study">
@@ -46,7 +60,6 @@ export default class ProjectDetail extends Component {
                             <h5 className="project-points mb-3"><span>Project team: </span>{team}</h5>
                             <h5 className="project-points mb-3"><span>Project Started: </span>{project.start_date} </h5>
                             <h5 className="project-points mb-5"><span>Project Ends: </span> {project.end_date}</h5>
-                            {/* <button type="button" className="btn filled-btn">View Details (.pdf)</button> */}
                         </div>
                         {/* <!-- ends --> */}
                         <div className="col-md-12 col-xl-6">
@@ -65,7 +78,7 @@ export default class ProjectDetail extends Component {
         return (
             <React.Fragment>
                 {body}
-            </React.Fragment>
+            </React.Fragment >
         )
     }
 }

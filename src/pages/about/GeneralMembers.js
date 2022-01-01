@@ -11,9 +11,7 @@ function createData(name, designation, department, contact) {
     return { name, designation, department, contact };
 }
 
-var rows = [
-
-];
+var rows = [];
 
 
 export default class GeneralMembers extends Component {
