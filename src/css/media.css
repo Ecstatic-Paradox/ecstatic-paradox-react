@@ -34,6 +34,7 @@
   .core-member-wrap {
     grid-template-columns: 1fr;
   }
+
 }
 
 @media (max-width: 767.98px) {
@@ -63,6 +64,9 @@
 
   #wrapper {
     margin-bottom: 10rem;
+  }
+  .cover h6 {
+    width: 100% !important;
   }
 }
 
@@ -115,6 +119,8 @@
   .blog-detail-head {
     flex-wrap: wrap;
   }
+
+
 }
 
 @media (max-width: 1199.98px) {
@@ -128,6 +134,9 @@
 
   .snippet-head-paragraph {
     width: 85%;
+  }
+  .cover h6 {
+    width: 75%;
   }
 }
 

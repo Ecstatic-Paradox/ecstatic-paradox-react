@@ -11,7 +11,7 @@ function Footer() {
                     <img src={logo_white} alt="Paradox-Logo" />
                 </Link>
                 <h6>
-                    Lorem ipsum dolor sit ametctetur adipisicing elit.Vitae cumquerr consectetur!Veniamminusiu Laboriosam.
+                    A venture towards amalgamating rigorous Physics-based research with Tech-based applications.
                 </h6>
             </div>
         </div>

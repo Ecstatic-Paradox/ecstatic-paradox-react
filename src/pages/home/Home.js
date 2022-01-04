@@ -15,8 +15,8 @@ export default class Home extends Component {
         <section id="wrapper">
           <div className="hero-section">
             <div>
-              <h1 className="big-text">Lorem Ipsum Dolor Sit<br /> Amet, Consectetur Adipiscing</h1>
-              <h6 className="small-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit</h6>
+              <h1 className="big-text">"Where Physics Meets Tech"</h1>
+              <h6 className="small-text">A venture towards amalgamating rigorous Physics-based research with Tech-based applications</h6>
             </div>
           </div>
         </section>
@@ -26,8 +26,8 @@ export default class Home extends Component {
           <div className="cover" style={{ backgroundImage: 'linear-gradient(rgb(20 20 40 / 60%), rgb(20 20 40 / 60%)), url("https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80")' }} >
             <div>
               <h1 className="big-text">Our Journey</h1>
-              <h6 className="small-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.<br /> Vitae cumque error consectetur!Veniam,<br /> minus eius Laboriosam.</h6>
-              <Link to="/about"><button type="button" className="btn filled-btn">Learn About Us</button></Link>
+              <h6 className="small-text">We started with a few passion-driven humans leading to create first-of-its-kind collaboration in the domain of Physics and Tech</h6>
+              <Link to="/about"><button type="button" className="btn filled-btn">Learn More</button></Link>
             </div>
           </div>
         </section>
