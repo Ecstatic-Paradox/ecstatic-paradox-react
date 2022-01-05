@@ -28,7 +28,7 @@ export default class Collaborators extends Component {
             return (
                 <div className="col-md-3" key={colb.id}>
                     <div className="sponsor-img">
-                        <h1 className="title">{colb.title}</h1>
+                        <img src={`${colb.icon}`} alt={colb.title} />
                     </div>
                 </div>
             )

@@ -3,23 +3,12 @@ import { Link } from 'react-router-dom'
 
 function NotFound() {
     return (
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="error-template">
-                        <h1>
-                            Oops!</h1>
-                        <h2>
-                            404 Not Found</h2>
-                        <div class="error-details">
-                            Sorry, an error has occured, Requested page not found!
-                        </div>
-                        <div class="error-actions">
-                            <Link to="/" class="btn btn-primary btn-lg">
-                                Take Me Home </Link>
-                        </div>
-                    </div>
-                </div>
+        <div class="error-message">
+            <div>
+                <h1>404</h1>
+                <h1>Page Not Found!</h1>
+                <p>Sorry, requested page is not found. Please double check the link.</p>
+                <Link to="/" class="btn btn-primary btn-lg">Take Me Home </Link>
             </div>
         </div>
     )
