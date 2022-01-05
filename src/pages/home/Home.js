@@ -15,7 +15,7 @@ export default class Home extends Component {
         <section id="wrapper">
           <div className="hero-section">
             <div>
-              <h1 className="big-text">"Where Physics Meets Tech"</h1>
+              <h1 className="big-text">Where Physics Meets Tech</h1>
               <h6 className="small-text">A venture towards amalgamating rigorous Physics-based research with Tech-based applications</h6>
             </div>
           </div>

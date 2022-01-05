@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import Loader from '../reusable/Loader';
+import { baseURL } from '../reusable/server';
 
 function Content(item) {
     let item_tag
@@ -8,7 +10,7 @@ function Content(item) {
             break;
         default:
             var cor = item.value
-            item_tag = <div dangerouslySetInnerHTML={{ __html: cor.replaceAll('src="/media', 'src="http://localhost:8000/media') }}></div>;
+            item_tag = <div dangerouslySetInnerHTML={{ __html: cor.replaceAll('src="/media', `src="${baseURL}/media`) }}></div>;
             break;
     }
     return item_tag
@@ -27,7 +29,7 @@ export default class ProjectDetail extends Component {
     fetchProject = async () => {
         try {
             const data = await fetch(
-                `http://localhost:8000/api/projects/${this.props.match.params.slug}`
+                `${baseURL}/api/projects/${this.props.match.params.slug}`
             )
             const item = await data.json()
             this.setState({ project: item })
@@ -63,7 +65,7 @@ export default class ProjectDetail extends Component {
                         </div>
                         {/* <!-- ends --> */}
                         <div className="col-md-12 col-xl-6">
-                            <img className="project-image" src={`http://localhost:8000${project.thumbnail.meta.download_url}`} alt="Project" />
+                            <img className="project-image" src={`${baseURL}${project.thumbnail.meta.download_url}`} alt="Project" />
                         </div>
                         {/* <!-- ends --> */}
                     </div>
@@ -73,7 +75,7 @@ export default class ProjectDetail extends Component {
                     {contents}
                 </div>
             </div>
-        </section> : ''
+        </section> : <Loader />
 
         return (
             <React.Fragment>

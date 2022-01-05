@@ -1,17 +1,18 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import { baseURL } from '../../reusable/server'
+import { truncate } from '../../reusable/truncate'
 
 export default class PinnedBlog extends Component {
     render() {
         var items = this.props.popular ? this.props.popular : ''
         var content = items.filter(item => item.is_pinned).map(item => {
-            var description = item.description.split(" ").splice(0, 20).length < 20 ? item.description : item.description.split(" ").splice(0, 20).join(" ") + '...'
             return (
 
                 <div key={item.meta.slug} className="big-post-wrap">
 
                     <div className="blog-img">
-                        <img src={`http://localhost:8000${item.thumbnail.meta.download_url}`} className="card-img-top" alt="Blog" />
+                        <img src={`${baseURL}${item.thumbnail.meta.download_url}`} className="card-img-top" alt="Blog" />
                         {item.tags.map((i, index) => <span key={index} className="badge bg-primary">{i}</span>)}
                     </div>
 
@@ -39,7 +40,7 @@ export default class PinnedBlog extends Component {
                                         <span>{item.view_count} views</span>
                                     </div>
                                 </div>
-                                <p>{description}</p>
+                                <p>{truncate(item.description, 20)}</p>
                             </div>
                         </Link>
 

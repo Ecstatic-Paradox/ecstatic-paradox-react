@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Collaborators from '../reusable/Collaborators';
+import { baseURL } from '../reusable/server';
 import FoundingMembers from './FoundingMembers';
 import GeneralMembers from './GeneralMembers';
 
@@ -18,7 +19,7 @@ export default class About extends Component {
     fetchProjects = async () => {
         try {
             const data = await fetch(
-                'http://localhost:8000/api/about/coremembers'
+                `${baseURL}/api/about/coremembers`
             )
             const items = await data.json()
             this.setState({ coremembers: items.filter(i => i.is_core_member) })
@@ -36,7 +37,7 @@ export default class About extends Component {
                     <div className="about-hero hero-section">
                         <h1 className="big-text w-100">HOW WE REACHED HERE</h1>
                         <p className="small-text w-100">
-                        We started with a team of 20 STEM enthusiasts, and through <br/>consistent efforts in our scientific adventures, our team upgraded.
+                            We started with a team of 20 STEM enthusiasts, and through <br />consistent efforts in our scientific adventures, our team upgraded.
                         </p>
                     </div>
                 </section>
@@ -51,11 +52,11 @@ export default class About extends Component {
                                 <div className="about-details">
                                     <h1 className="title mb-5">Our Mission</h1>
                                     <h6>
-                                    Ecstatic Paradox intends to make strides in Physics and Tech and amend the way of independent actions by science 
-                                    activists as team research and a group collaboration activity. We visualize assembling a multi-national research 
-                                    team that can invigorate spectrums of science making scientific activities more effective and efficient. It is 
-                                    also a self-learning platform where members gain proper exposure to scientific methodologies. We intend to 
-                                    rejuvenate science as group research and make impactful contributions through team efforts.
+                                        Ecstatic Paradox intends to make strides in Physics and Tech and amend the way of independent actions by science
+                                        activists as team research and a group collaboration activity. We visualize assembling a multi-national research
+                                        team that can invigorate spectrums of science making scientific activities more effective and efficient. It is
+                                        also a self-learning platform where members gain proper exposure to scientific methodologies. We intend to
+                                        rejuvenate science as group research and make impactful contributions through team efforts.
                                     </h6>
                                 </div>
                             </div>
@@ -86,12 +87,12 @@ export default class About extends Component {
                             <div className="col-md-12 col-lg-6">
                                 <div className="about-details pe-5">
                                     <h6>
-                                    This organizational initiative is based on teamwork. A team with brilliant, innovative, and curious minds has received 
-                                    a platform to make a change and learn as well. We are responsible and abide by the rules of this team. We work 
-                                    proactively, collectively, diligently, and flexibly. People who pursue Theoretical and Mathematical Physics, 
-                                    Astrophysics, Data Science, Web Development, Machine Learning, and AI work together with intellectual liberty 
-                                    and professional collaborations. The best thing is that everyone works voluntarily with intense passion. We are 
-                                    working together to create global change, invigorating the tangible scientific spectrums of our world. 
+                                        This organizational initiative is based on teamwork. A team with brilliant, innovative, and curious minds has received
+                                        a platform to make a change and learn as well. We are responsible and abide by the rules of this team. We work
+                                        proactively, collectively, diligently, and flexibly. People who pursue Theoretical and Mathematical Physics,
+                                        Astrophysics, Data Science, Web Development, Machine Learning, and AI work together with intellectual liberty
+                                        and professional collaborations. The best thing is that everyone works voluntarily with intense passion. We are
+                                        working together to create global change, invigorating the tangible scientific spectrums of our world.
                                     </h6>
                                 </div>
                             </div>

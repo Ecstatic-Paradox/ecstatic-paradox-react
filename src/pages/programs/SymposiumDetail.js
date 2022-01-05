@@ -1,18 +1,22 @@
 import React, { Component } from 'react'
+import Loader from '../reusable/Loader';
+import { baseURL } from '../reusable/server';
 
 export default class SymposiumDetail extends Component {
     state = {
-        symposium: null
+        symposium: null,
+        loading: true
     }
 
     componentDidMount() {
         this.fetchSymposium();
+        this.setState({ loading: false })
     }
 
     fetchSymposium = async () => {
         try {
             const data = await fetch(
-                `http://localhost:8000/api/symposiums/${this.props.match.params.id}`
+                `${baseURL}/api/symposiums/${this.props.match.params.id}`
             )
             const item = await data.json()
             this.setState({ symposium: item })
@@ -29,7 +33,7 @@ export default class SymposiumDetail extends Component {
                 <div className="webinar-overview">
                     <div className="row">
                         <div className="col-md-12 col-xl-6">
-                            <img src={`http://localhost:8000${item.thumbnail.meta.download_url}`} alt="Project" />
+                            <img src={`${baseURL}${item.thumbnail.meta.download_url}`} alt="Project" />
                         </div>
                         <div className="col-md-12 col-xl-6 mb-5">
                             <h1 className="webinar-title mt-4 mb-3">{item.meta.title}</h1>
@@ -78,7 +82,7 @@ export default class SymposiumDetail extends Component {
                     </div>
                 </div>
             </div>
-        </section> : ''
+        </section> : <Loader />
         return (
             <>
                 {content}

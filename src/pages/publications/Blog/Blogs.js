@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { baseURL } from '../../reusable/server'
 import LatestBlog from './LatestBlog'
 import MostPopular from './MostPopular'
 import PinnedBlog from './PinnedBlog'
@@ -21,7 +22,7 @@ export default class Blogs extends Component {
     fetchLatestBlogs = async () => {
         try {
             const data = await fetch(
-                `http://localhost:8000/api/blogs/`
+                `${baseURL}/api/blogs/`
             )
             const item = await data.json()
             this.setState({ latest: item.items })
@@ -33,7 +34,7 @@ export default class Blogs extends Component {
     fetchPopularBlogs = async () => {
         try {
             const data = await fetch(
-                `http://localhost:8000/api/blogs/popular/`
+                `${baseURL}/api/blogs/popular/`
             )
             const item = await data.json()
             this.setState({ popular: item })

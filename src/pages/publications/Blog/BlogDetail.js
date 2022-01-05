@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import Loader from '../../reusable/Loader';
+import { baseURL } from '../../reusable/server';
 
 function Content(item) {
     let item_tag
@@ -8,7 +10,7 @@ function Content(item) {
             break;
         default:
             var cor = item.value
-            item_tag = <div dangerouslySetInnerHTML={{ __html: cor.replaceAll('src="/media', 'src="http://localhost:8000/media') }}></div>;
+            item_tag = <div dangerouslySetInnerHTML={{ __html: cor.replaceAll('src="/media', `src="${baseURL}/media`) }}></div>;
             break;
     }
     return item_tag
@@ -27,7 +29,7 @@ export default class BlogDetail extends Component {
     fetchBlog = async () => {
         try {
             const data = await fetch(
-                `http://localhost:8000/api/blogs/${this.props.match.params.slug}`
+                `${baseURL}/api/blogs/${this.props.match.params.slug}`
             )
             const item = await data.json()
             this.setState({ blog: item })
@@ -50,7 +52,7 @@ export default class BlogDetail extends Component {
                 <h4 className="project-heading my-5">Case Study</h4>
                 <div className="blog-detail-head w-100 d-flex align-items-center my-4">
                     <div className="avatar d-flex align-items-center">
-                        <img src={`http://localhost:8000${item.meta.owner.avatar}`} alt="Avatar" />
+                        <img src={`${baseURL}${item.meta.owner.avatar}`} alt="Avatar" />
                         <h5 className="ms-3">{item.meta.owner.first_name} {item.meta.owner.last_name}</h5>
                     </div>
                     <div className="d-flex align-items-center ms-5">
@@ -87,13 +89,13 @@ export default class BlogDetail extends Component {
 
 
                 <div className="blog-detail-content">
-                    <img className="mb-5" src={`http://localhost:8000${item.thumbnail.meta.download_url}`} alt="blog" />
+                    <img className="mb-5" src={`${baseURL}${item.thumbnail.meta.download_url}`} alt="blog" />
                     <p>{item.description ? item.description : ''}</p><br />
                     {contents}
 
                 </div>
             </div>
-        </section> : ''
+        </section> : <Loader />
 
         return (
             <>

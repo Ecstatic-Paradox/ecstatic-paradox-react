@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { baseURL } from './server';
 
 export default class Collaborators extends Component {
     state = {
@@ -12,7 +13,7 @@ export default class Collaborators extends Component {
     fetchProjects = async () => {
         try {
             const data = await fetch(
-                'http://localhost:8000/api/about/collaborators/'
+                `${baseURL}/api/about/collaborators/`
             )
             const items = await data.json()
             this.setState({ collaborators: items })

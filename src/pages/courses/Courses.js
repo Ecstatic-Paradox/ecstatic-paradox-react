@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import { baseURL } from '../reusable/server';
+import { truncate } from '../reusable/truncate';
 
 export default class Courses extends Component {
 
@@ -14,7 +16,7 @@ export default class Courses extends Component {
     fetchCourses = async () => {
         try {
             const data = await fetch(
-                `http://localhost:8000/api/courses/`
+                `${baseURL}/api/courses/`
             )
             const item = await data.json()
             this.setState({ courses: item.items })
@@ -32,11 +34,11 @@ export default class Courses extends Component {
                     <Link to={`/courses/${item.meta.id}`}>
                         <div className="blog-card">
                             <div className="blog-img">
-                                <img src={`http://localhost:8000${item.thumbnail.meta.download_url}`} className="card-img-top" alt="Blog" />
+                                <img src={`${baseURL}${item.thumbnail.meta.download_url}`} className="card-img-top" alt="Blog" />
                             </div>
                             <div className="card-body">
                                 <h4>{item.meta.title}</h4>
-                                <p className="small-text">{item.description.length <= 20 ? item.description : item.description.split(" ").splice(0, 20).join(" ") + "..."}</p>
+                                <p className="small-text">{truncate(item.description, 20)}</p>
                             </div>
                         </div>
                     </Link>

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
+import { baseURL } from '../../reusable/server';
 
 export default class ArticleList extends Component {
     state = {
@@ -13,7 +14,7 @@ export default class ArticleList extends Component {
     fetchArticles = async () => {
         try {
             const data = await fetch(
-                'http://localhost:8000/api/articles/'
+                `${baseURL}/api/articles/`
             )
             const items = await data.json()
             this.setState({ articles: items.items })
@@ -31,7 +32,7 @@ export default class ArticleList extends Component {
                     <Link to={`/articles/${article.slug}`}>
                         <div className="article-card">
                             <div className="article-img">
-                                <img src={`http://localhost:8000${article.thumbnail.meta.download_url}`} className="card-img-top article-image" alt="Blog" />
+                                <img src={`${baseURL}${article.thumbnail.meta.download_url}`} className="card-img-top article-image" alt="Blog" />
                             </div>
                             <div className="card-body">
                                 <div className="article-stats w-100 d-flex justify-content-between align-items-center mb-4">

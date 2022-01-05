@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import Loader from '../reusable/Loader';
+import { baseURL } from '../reusable/server';
 
 export default class CourseDetail extends Component {
     state = {
@@ -12,7 +14,7 @@ export default class CourseDetail extends Component {
     fetchCourse = async () => {
         try {
             const data = await fetch(
-                `http://localhost:8000/api/courses/${this.props.match.params.id}`
+                `${baseURL}/api/courses/${this.props.match.params.id}`
             )
             const item = await data.json()
             this.setState({ course: item })
@@ -28,7 +30,7 @@ export default class CourseDetail extends Component {
                 <div className="webinar-overview">
                     <div className="row">
                         <div className="col-md-12 col-xl-6">
-                            <img src={`http://localhost:8000${item.thumbnail.meta.download_url}`} alt="Project" />
+                            <img src={`${baseURL}${item.thumbnail.meta.download_url}`} alt="Project" />
                         </div>
 
                         <div className="col-md-12 col-xl-6 mb-5">
@@ -75,7 +77,7 @@ export default class CourseDetail extends Component {
                     </div>
                 </div>
             </div>
-        </section> : ''
+        </section> : <Loader />
         return (
             <>
                 {content}

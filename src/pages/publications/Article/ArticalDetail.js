@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Document, Page } from 'react-pdf/dist/esm/entry.webpack';
+import { baseURL } from '../../reusable/server';
 
 
 export default function ArticalDetail({ match }) {
@@ -17,7 +18,7 @@ export default function ArticalDetail({ match }) {
   const fetchArticle = async () => {
     try {
       const data = await fetch(
-        `http://localhost:8000/api/articles/${match.params.slug}`
+        `${baseURL}/api/articles/${match.params.slug}`
       )
       const item = await data.json()
       setArticle(item)

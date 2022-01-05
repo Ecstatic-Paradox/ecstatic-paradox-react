@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom'
 import React, { Component } from 'react'
+import { baseURL } from '../../reusable/server'
+import { truncate } from '../../reusable/truncate'
 
 
 
@@ -7,13 +9,12 @@ export default class LatestBlog extends Component {
     render() {
         var items = this.props.item ? this.props.item : ''
         const content = items.map(item => {
-            var description = item.description.split(" ").splice(0, 20).length < 20 ? item.description : item.description.split(" ").splice(0, 20).join(" ") + '...'
             return (
                 <div key={item.meta.slug} className="col">
                     <Link to={`/blogs/${item.meta.slug}`}>
                         <div className="blog-card">
                             <div className="blog-img">
-                                <img src={`http://localhost:8000${item.thumbnail.meta.download_url}`} className="card-img-top" alt="Blog" />
+                                <img src={`${baseURL}${item.thumbnail.meta.download_url}`} className="card-img-top" alt="Blog" />
                                 {item.tags.map((i, index) => <span key={index} className="badge bg-primary">{i}</span>)}
                             </div>
                             <div className="d-flex align-items-center mt-3">
@@ -27,7 +28,7 @@ export default class LatestBlog extends Component {
                             </div>
                             <div className="card-body">
                                 <h4>{item.meta.title}</h4>
-                                <p className="small-text">{description}</p>
+                                <p className="small-text">{truncate(item.description, 20)}</p>
                             </div>
                         </div>
                     </Link>

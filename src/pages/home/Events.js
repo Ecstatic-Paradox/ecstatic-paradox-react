@@ -1,10 +1,44 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import { baseURL } from '../reusable/server';
+import { truncate } from '../reusable/truncate';
 
 export default class Events extends Component {
-    render() {
-        return (
+    state = {
+        papers: []
+    }
 
+    componentDidMount() {
+        this.fetchPapers();
+    }
+
+    fetchPapers = async () => {
+        try {
+            const data = await fetch(
+                `${baseURL}/api/researchpapers/`
+            )
+            const items = await data.json()
+            this.setState({ papers: items.items })
+        } catch (err) {
+            console.log('some error occured')
+        }
+    }
+    render() {
+        var items = this.state.papers.splice(0, 2)
+        const contents = items.map(item => {
+            return (
+                <div key={item.meta.id} className="col-md-6">
+
+                    <div className="event-card">
+                        <Link to={`research-papers/${item.slug}`}>
+                            <h2>{item.meta.title}</h2>
+                            <p>{truncate(item.description, 20)}</p>
+                        </Link>
+                    </div>
+                </div>
+            )
+        })
+        return (
             < section id="wrapper" >
                 <div className="cover text-center justify-content-center" style={{ backgroundImage: 'linear-gradient(rgb(20 20 40 / 60%), rgb(20 20 40 / 60%)), url("https://images.pexels.com/photos/8761540/pexels-photo-8761540.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260")', backgroundAttachment: 'unset' }}>
                     <div className="w-100">
@@ -13,20 +47,7 @@ export default class Events extends Component {
                             <button type="button" className="btn filled-btn">View Researches</button>
                         </Link>
                         <div className="row event-wrap">
-                            <div className="col-md-6">
-                                <div className="event-card">
-                                    <h2>Lorem Ipsum</h2>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-                                </div>
-                            </div>
-                            {/* <!-- ends --> */}
-                            <div className="col-md-6">
-                                <div className="event-card">
-                                    <h2>Lorem Ipsum</h2>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-                                </div>
-                            </div>
-                            {/* <!-- ends --> */}
+                            {contents}
                         </div>
                     </div>
                 </div>

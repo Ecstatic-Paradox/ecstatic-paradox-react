@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
+import { baseURL } from '../reusable/server';
+import { truncate } from '../reusable/truncate';
 
 export default class HomeBlogs extends Component {
     state = {
@@ -13,7 +15,7 @@ export default class HomeBlogs extends Component {
     fetchPopularBlogs = async () => {
         try {
             const data = await fetch(
-                `http://localhost:8000/api/blogs/popular/`
+                `${baseURL}/api/blogs/popular/`
             )
             const item = await data.json()
             this.setState({ popular: item })
@@ -27,12 +29,11 @@ export default class HomeBlogs extends Component {
         var items = this.state.popular ? this.state.popular : ''
 
         var content = items.slice(0, 3).map(item => {
-            var description = item.description.split(" ").splice(0, 20).length < 20 ? item.description : item.description.split(" ").splice(0, 20).join(" ") + '...'
             return (
                 <div key={item.meta.slug} className="blog-card">
                     <Link to={`/blogs/${item.meta.slug}`}>
                         <div className="blog-img">
-                            <img src="https://images.pexels.com/photos/4144179/pexels-photo-4144179.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" className="card-img-top" alt="Blog" />
+                            <img src={`${baseURL}${item.thumbnail.meta.download_url}`} className="card-img-top" alt="Blog" />
                             {item.tags.map((i, index) => <span key={index} className="badge bg-primary">{i}</span>)}
                         </div>
                         <div className="card-body">
@@ -44,7 +45,7 @@ export default class HomeBlogs extends Component {
                                 <span>{item.view_count} views</span>
                             </div>
                             <h4>{item.meta.title}</h4>
-                            <p className="small-text">{description}</p>
+                            <p className="small-text">{truncate(item.description, 20)}</p>
                         </div>
                     </Link>
                 </div>

@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { checkData } from '../reusable/checkData'
+import { baseURL } from '../reusable/server'
 
 export default class FoundingMembers extends Component {
 
@@ -7,11 +9,11 @@ export default class FoundingMembers extends Component {
         const members = this.props.members.map((mem, index) => {
             return (
                 <div className="core-member-item" key={index}>
-                    <img className="member-image" src={`http://localhost:8000${mem.avatar}`} alt="back view of woman wearing a backpack and beanie waiting to cross the road on a busy street at night in New York City, USA" />
+                    <img className="member-image" src={`${baseURL}${mem.avatar}`} alt="back view of woman wearing a backpack and beanie waiting to cross the road on a busy street at night in New York City, USA" />
                     <div className="overlay">
                         <div className="core-member-info">
-                            <h4>{mem.first_name} {mem.last_name}</h4>
-                            <p className="small-text">{mem.designation}</p>
+                            <h4>{checkData(mem.first_name)} {checkData(mem.last_name)}</h4>
+                            <p className="small-text">{checkData(mem.designation)}, {checkData(mem.user_department)}</p>
                             <div className="core-member-icon">
                                 <a href="facebook.com">
                                     <svg viewBox="0 0 16 16">

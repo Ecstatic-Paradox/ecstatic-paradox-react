@@ -18,6 +18,7 @@ import SymposiumDetail from "./pages/programs/SymposiumDetail";
 import CourseDetail from "./pages/courses/CourseDetail";
 import BlogDetail from "./pages/publications/Blog/BlogDetail";
 import ResearchDetail from "./pages/publications/ResearchDetail";
+import NotFound from "./Layouts/NotFound";
 
 function App() {
   return (
@@ -28,20 +29,22 @@ function App() {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/about" component={About} />
-          <Route exact path="/projects" component={Project} />
+          <Route exact path="/projects/" component={Project} />
           <Route exact path="/projects/:slug" component={ProjectDetail} />
           <Route exact path="/blogs/" component={Blogs} />
           <Route exact path="/blogs/:slug" component={BlogDetail} />
           <Route exact path="/research-papers/" component={ResearchPapers} />
           <Route exact path="/research-papers/:slug" component={ResearchDetail} />
-          <Route exact path="/articles" component={Articles} />
+          <Route exact path="/articles/" component={Articles} />
           <Route exact path="/articles/:slug" component={ArticalDetail} />
-          <Route exact path="/webinars" component={Webinar} />
+          <Route exact path="/webinars/" component={Webinar} />
           <Route exact path="/webinars/:id" component={WebinarDetail} />
           <Route exact path="/symposiums/" component={Symposium} />
           <Route exact path="/symposiums/:id" component={SymposiumDetail} />
           <Route exact path="/courses/" component={Courses} />
           <Route exact path="/courses/:id" component={CourseDetail} />
+          <Route path="" component={NotFound} />
+
         </Switch>
         <Footer />
       </BrowserRouter>

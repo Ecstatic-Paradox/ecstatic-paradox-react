@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import OwlCarousel from 'react-owl-carousel';
 import { Link } from 'react-router-dom';
+import { baseURL } from '../reusable/server';
 
 export default class ProjectList extends Component {
 
@@ -15,7 +16,7 @@ export default class ProjectList extends Component {
     fetchProjects = async () => {
         try {
             const data = await fetch(
-                'http://localhost:8000/api/projects/'
+                `${baseURL}/api/projects/`
             )
             const items = await data.json()
             this.setState({ section: items.meta.sections })
@@ -57,7 +58,7 @@ export default class ProjectList extends Component {
                                     <Link to={`/projects/${proj.slug}`}>
                                         <div className="project-card">
                                             <div className="blog-img">
-                                                <img src={`http://localhost:8000${proj.thumbnail.meta.download_url}`} className="card-img-top" alt="Blog" />
+                                                <img src={`${baseURL}${proj.thumbnail.meta.download_url}`} className="card-img-top" alt="Blog" />
                                             </div>
                                             <div className="card-body">
                                                 <h4>{proj.title}</h4>

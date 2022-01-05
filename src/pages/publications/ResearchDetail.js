@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import Loader from '../reusable/Loader';
+import { baseURL } from '../reusable/server'
 
 function Content(item) {
     let item_tag
@@ -8,7 +10,7 @@ function Content(item) {
             break;
         default:
             var cor = item.value
-            item_tag = <div dangerouslySetInnerHTML={{ __html: cor.replaceAll('src="/media', 'src="http://localhost:8000/media') }}></div>;
+            item_tag = <div dangerouslySetInnerHTML={{ __html: cor.replaceAll('src="/media', `src="${baseURL}/media`) }}></div>;
             break;
     }
     return item_tag
@@ -28,7 +30,7 @@ export default class ResearchDetail extends Component {
     fetchPaper = async () => {
         try {
             const data = await fetch(
-                `http://localhost:8000/api/researchpapers/${this.props.match.params.slug}/`
+                `${baseURL}/api/researchpapers/${this.props.match.params.slug}/`
             )
             const item = await data.json()
             console.log(item)
@@ -93,7 +95,7 @@ export default class ResearchDetail extends Component {
 
 
                         <div className="blog-detail-content">
-                            <img className='mb-5' src={`http://localhost:8000${item.thumbnail.meta.download_url}`} alt="blog" />
+                            <img className='mb-5' src={`${baseURL}${item.thumbnail.meta.download_url}`} alt="blog" />
                             {body}
                         </div>
 
@@ -133,7 +135,7 @@ export default class ResearchDetail extends Component {
                             {item.author.map((author, i) => {
                                 return (
                                     <div key={i} className="author-details">
-                                        <img src={`http://localhost:8000${author.avatar}`} alt="author" />
+                                        <img src={`${baseURL}${author.avatar}`} alt="author" />
                                         <h2>{author.first_name} {author.last_name}</h2>
                                         {author.fb_profile_link ? <p>facebook: {author.fb_profile_link}</p> : ''}
                                     </div>
@@ -145,7 +147,7 @@ export default class ResearchDetail extends Component {
                 </div>
 
             </div>
-        </section> : 'loading'
+        </section> : <Loader />
 
         return (
             <>

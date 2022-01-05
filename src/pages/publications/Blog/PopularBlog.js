@@ -1,18 +1,18 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import { baseURL } from '../../reusable/server'
+import { truncate } from '../../reusable/truncate'
 
 export default class PopularBlog extends Component {
     render() {
         var items = this.props.item ? this.props.item : ''
-
         const content = items.slice(1).map(item => {
-            var description = item.description.split(" ").splice(0, 20).length < 20 ? item.description : item.description.split(" ").splice(0, 20).join(" ") + '...'
             return (
                 <div key={item.meta.slug} className="small-post mb-2">
                     <Link to={`/blogs/${item.meta.slug}`}>
                         <div className="row">
                             <div className="col-md-5">
-                                <img src={`http://localhost:8000${item.thumbnail.meta.download_url}`} className="card-img-top" alt="Blog" />
+                                <img src={`${baseURL}${item.thumbnail.meta.download_url}`} className="card-img-top" alt="Blog" />
                             </div>
                             <div className="col p-1">
                                 <h4>{item.meta.title}</h4>
@@ -36,7 +36,7 @@ export default class PopularBlog extends Component {
                                         <span>{item.view_count} views</span>
                                     </div>
                                 </div>
-                                <p className="small-text">{description}</p>
+                                <p className="small-text">{truncate(item.description, 20)}</p>
                             </div>
                         </div>
                     </Link>

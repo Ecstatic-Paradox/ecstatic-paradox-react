@@ -1,17 +1,16 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import { baseURL } from '../../reusable/server'
+import { truncate } from '../../reusable/truncate'
 
 export default class MostPopular extends Component {
     render() {
         var item = this.props.item ? this.props.item : ''
-
-        var description = item.description.split(" ").splice(0, 20).length < 20 ? item.description : item.description.split(" ").splice(0, 20).join(" ") + '...'
-
         var content = item ? <div className="col-md-12 col-xl-6">
             <Link to={`/blogs/${item.meta.slug}`}>
                 <div className="blog-card m-0">
                     <div className="blog-img">
-                        <img src={`http://localhost:8000${item.thumbnail.meta.download_url}`} className="card-img-top" alt="Blog" />
+                        <img src={`${baseURL}${item.thumbnail.meta.download_url}`} className="card-img-top" alt="Blog" />
                         {item.tags.map((i, index) => <span key={index} className="badge bg-primary">{i}</span>)}
                     </div>
                     <div className="card-body mb-5">
@@ -36,7 +35,7 @@ export default class MostPopular extends Component {
                             </div>
                         </div>
                         <h4>{item.meta.title}</h4>
-                        <p className="small-text">{description}</p>
+                        <p className="small-text">{truncate(item.description, 20)}</p>
                     </div>
                 </div>
             </Link>

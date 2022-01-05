@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import { baseURL } from '../reusable/server';
+import { truncate } from '../reusable/truncate';
 
 export default class Symposium extends Component {
     state = {
@@ -13,7 +15,7 @@ export default class Symposium extends Component {
     fetchSymposiums = async () => {
         try {
             const data = await fetch(
-                `http://localhost:8000/api/symposiums/`
+                `${baseURL}/api/symposiums/`
             )
             const item = await data.json()
             this.setState({ symposium: item.items })
@@ -28,14 +30,14 @@ export default class Symposium extends Component {
                 <div key={item.meta.id} className="webinar-live-card">
                     <div className="row">
                         <div className="col-md-5">
-                            <img src={`http://localhost:8000${item.thumbnail.meta.download_url}`} className="card-img-top" alt="Blog" />
+                            <img src={`${baseURL}${item.thumbnail.meta.download_url}`} className="card-img-top" alt="Blog" />
                         </div>
 
                         <div className="col p-1">
                             <h3>{item.meta.title}</h3>
                             <h5 className="webinar-points mt-4 mb-3"><span>Date:</span> {item.date}</h5>
                             <h5 className="webinar-points mb-3"><span>Time:</span> 2pm</h5>
-                            <p>{item.description.split(" ").splice(0, 20).join(" ") + "..."}</p>
+                            <p>{truncate(item.description, 20)}</p>
                             <div className="webinar-card-btn d-flex align-items-center mt-5">
                                 <Link to={`/symposiums/${item.meta.id}`}><button type="button" className="btn filled-btn me-4">View Details</button></Link>
                                 <a href={item.youtube_link} target="_blank" rel="noopener noreferrer">

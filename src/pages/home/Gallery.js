@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { baseURL } from '../reusable/server';
 
 export default class Gallery extends Component {
 
@@ -13,7 +14,7 @@ export default class Gallery extends Component {
     fetchImages = async () => {
         try {
             const data = await fetch(
-                `http://localhost:8000/api/gallery/`
+                `${baseURL}/api/gallery/`
             )
             const item = await data.json()
             this.setState({ images: item.items })
@@ -26,7 +27,7 @@ export default class Gallery extends Component {
         const content = this.state.images.map(item => {
             return (
                 <div key={item.thumbnail.id} className="gallery-item">
-                    <img className="gallery-image" src={`http://localhost:8000${item.thumbnail.meta.download_url}`} alt="back view of woman wearing a backpack and beanie waiting to cross the road on a busy street at night in New York City, USA" />
+                    <img className="gallery-image" src={`${baseURL}${item.thumbnail.meta.download_url}`} alt="back view of woman wearing a backpack and beanie waiting to cross the road on a busy street at night in New York City, USA" />
                 </div>
             )
         })
