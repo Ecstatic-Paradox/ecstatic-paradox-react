@@ -27,12 +27,7 @@ export default class HomeBlogs extends Component {
         var items = this.state.popular ? this.state.popular : ''
 
         var content = items.slice(0, 3).map(item => {
-            // var desc = item ? item.content.map(con => {
-            //     return (
-            //         con.type === 'paragraph' ? con.value : ''
-            //     )
-            // }) : ''
-
+            var description = item.description.split(" ").splice(0, 20).length < 20 ? item.description : item.description.split(" ").splice(0, 20).join(" ") + '...'
             return (
                 <div key={item.meta.slug} className="blog-card">
                     <Link to={`/blogs/${item.meta.slug}`}>
@@ -49,7 +44,7 @@ export default class HomeBlogs extends Component {
                                 <span>{item.view_count} views</span>
                             </div>
                             <h4>{item.meta.title}</h4>
-                            {/* <p className="small-text" dangerouslySetInnerHTML={{ __html: desc[1].length <= 20 ? desc[1].split(" ").splice(0, 20).join(" ") : desc[1] }}></p> */}
+                            <p className="small-text">{description}</p>
                         </div>
                     </Link>
                 </div>

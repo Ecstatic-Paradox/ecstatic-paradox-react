@@ -4,14 +4,10 @@ import { Link } from 'react-router-dom'
 export default class PopularBlog extends Component {
     render() {
         var items = this.props.item ? this.props.item : ''
-        const content = items.slice(1).map(item => {
-            var desc = item ? item.content.map(con => {
-                return (
-                    con.type === 'paragraph' ? con.value : ''
-                )
-            }) : ''
-            return (
 
+        const content = items.slice(1).map(item => {
+            var description = item.description.split(" ").splice(0, 20).length < 20 ? item.description : item.description.split(" ").splice(0, 20).join(" ") + '...'
+            return (
                 <div key={item.meta.slug} className="small-post mb-2">
                     <Link to={`/blogs/${item.meta.slug}`}>
                         <div className="row">
@@ -40,7 +36,7 @@ export default class PopularBlog extends Component {
                                         <span>{item.view_count} views</span>
                                     </div>
                                 </div>
-                                <p className="small-text" dangerouslySetInnerHTML={{ __html: desc[1].length <= 20 ? desc[1].split(" ").splice(0, 20).join(" ") : desc[1] }}></p>
+                                <p className="small-text">{description}</p>
                             </div>
                         </div>
                     </Link>

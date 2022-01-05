@@ -88,7 +88,7 @@ export default class BlogDetail extends Component {
 
                 <div className="blog-detail-content">
                     <img className="mb-5" src={`http://localhost:8000${item.thumbnail.meta.download_url}`} alt="blog" />
-
+                    <p>{item.description ? item.description : ''}</p><br />
                     {contents}
 
                 </div>
