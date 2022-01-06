@@ -1,1 +1,1 @@
-export const baseURL = "http://app.ecstaticparadox.com"
+export const baseURL = "https://app.ecstaticparadox.com"
