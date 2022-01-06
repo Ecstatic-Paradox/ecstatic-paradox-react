@@ -6,6 +6,7 @@ import Gallery from "./Gallery";
 import HomeBlogs from "./HomeBlogs";
 import HomeProjects from "./HomeProjects";
 import People from "./People";
+import cover from "../../assests/cover.gif";
 
 export default class Home extends Component {
 
@@ -13,7 +14,7 @@ export default class Home extends Component {
     return (
       <React.Fragment>
         <section id="wrapper">
-          <div className="hero-section">
+          <div className="hero-section" style={{ backgroundImage: `linear-gradient(rgb(20 20 40 / 60%), rgb(20 20 40 / 60%)), url(${cover})`, backgroundPosition: "center" }} >
             <div>
               <h1 className="big-text">Where Physics Meets Tech</h1>
               <h6 className="small-text">A venture towards amalgamating rigorous Physics-based research with Tech-based applications</h6>
