@@ -17,7 +17,7 @@ function Footer() {
                 </div>
                 <div className="footer-links">
                     <div>
-                        <h2>Ouick Link</h2>
+                        <h2>Quick Link</h2>
                         <div className="footer-link-list">
                             <Link to="/about">About Us</Link>
                             <Link to="/projects">Projects</Link>
