@@ -37,10 +37,10 @@ function App() {
           <Route exact path="/research-papers/:slug" component={ResearchDetail} />
           <Route exact path="/articles/" component={Articles} />
           <Route exact path="/articles/:slug" component={ArticalDetail} />
-          <Route exact path="/webinars/" component={Webinar} />
+          {/* <Route exact path="/webinars/" component={Webinar} />
           <Route exact path="/webinars/:id" component={WebinarDetail} />
           <Route exact path="/symposiums/" component={Symposium} />
-          <Route exact path="/symposiums/:id" component={SymposiumDetail} />
+          <Route exact path="/symposiums/:id" component={SymposiumDetail} /> */}
           <Route exact path="/courses/" component={Courses} />
           <Route exact path="/courses/:id" component={CourseDetail} />
           <Route path="" component={NotFound} />
