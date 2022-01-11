@@ -1,4 +1,13 @@
+@media (max-width: 400px) {
+  #footer a {
+    font-size: 0.8rem;
+  }
+}
 @media (max-width: 575.98px) {
+  .navbar-brand img {
+    width: 14rem;
+  }
+
   .hero-section h1 {
     font-size: 1.5rem !important;
   }
@@ -33,6 +42,10 @@
   .gallery-wrap,
   .core-member-wrap {
     grid-template-columns: 1fr;
+  }
+
+  #footer {
+    padding: 1rem 0.8rem;
   }
 
 }
@@ -72,7 +85,7 @@
 
 @media (max-width: 991.98px) {
   #footer img {
-    width: 18rem;
+    width: 15rem;
   }
   #footer {
     flex-wrap: wrap;
@@ -119,8 +132,6 @@
   .blog-detail-head {
     flex-wrap: wrap;
   }
-
-
 }
 
 @media (max-width: 1199.98px) {

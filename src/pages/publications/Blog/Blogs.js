@@ -4,6 +4,8 @@ import LatestBlog from './LatestBlog'
 import MostPopular from './MostPopular'
 import PinnedBlog from './PinnedBlog'
 import PopularBlog from './PopularBlog'
+import blogcover from"../../../assests/blog-cover.jpg"
+
 
 
 
@@ -48,7 +50,7 @@ export default class Blogs extends Component {
         return (
             <>
                 <section id="wrapper">
-                    <div className="about-hero hero-section">
+                    <div className="about-hero hero-section" style={{ backgroundImage: `linear-gradient(rgb(20 20 40 / 60%), rgb(20 20 40 / 60%)), url(${blogcover})`, backgroundPosition: "center"}}>
                         <h1 className="big-text">Blogs</h1>
                         <p className="small-text">
                             Lorem ipsum dolor sit amet consectetur adipisicing elit,<br />
