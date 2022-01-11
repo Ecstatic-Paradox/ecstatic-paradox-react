@@ -70,7 +70,7 @@ function Navbar() {
                   </li>
                 </ul>
               </li>
-              <li className="nav-item dropdown">
+              {/* <li className="nav-item dropdown">
                 <div
                   className="nav-link dropdown-toggle"
                   id="navbarDropdownMenuLink"
@@ -95,7 +95,7 @@ function Navbar() {
                     </Link>
                   </li>
                 </ul>
-              </li>
+              </li> */}
               <li className="nav-item">
                 <Link className="nav-link" to="/courses">
                   Courses
