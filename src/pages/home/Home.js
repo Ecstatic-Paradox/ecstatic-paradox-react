@@ -7,7 +7,7 @@ import HomeBlogs from "./HomeBlogs";
 import HomeProjects from "./HomeProjects";
 import People from "./People";
 import cover from "../../assests/cover.gif";
-import journey from"../../assests/journey.jpg";
+import journey from "../../assests/journey.jpg";
 
 export default class Home extends Component {
 
@@ -22,10 +22,10 @@ export default class Home extends Component {
             </div>
           </div>
         </section>
-        <HomeProjects />
+        {/* <HomeProjects /> */}
 
         <section id="wrapper">
-          <div className="cover" style={{ backgroundImage: `linear-gradient(rgb(20 20 40 / 60%), rgb(20 20 40 / 60%)), url(${journey})`}}>
+          <div className="cover" style={{ backgroundImage: `linear-gradient(rgb(20 20 40 / 60%), rgb(20 20 40 / 60%)), url(${journey})` }}>
             <div>
               <h1 className="big-text">Our Journey</h1>
               <h6 className="small-text">We started with a few passion-driven humans leading to create first-of-its-kind collaboration in the domain of Physics and Tech</h6>
