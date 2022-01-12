@@ -44,7 +44,7 @@ export default class About extends Component {
                     <div className="about-hero hero-section" style={{ backgroundImage: `linear-gradient(rgb(20 20 40 / 60%), rgb(20 20 40 / 60%)), url(${aboutcover})`, backgroundPosition: "center" }}>
                         <h1 className="big-text w-100">HOW WE REACHED HERE</h1>
                         <p className="small-text w-100">
-                            We started with a team of 20 STEM enthusiasts, and through <br />consistent efforts in our scientific adventures, our team upgraded.
+                            We started with a team of 20 STEM enthusiasts, and through consistent efforts in our scientific adventures, our team upgraded.
                         </p>
                     </div>
                 </section>
@@ -102,7 +102,7 @@ export default class About extends Component {
                                         and professional collaborations. The best thing is that everyone works voluntarily with intense passion. We are
                                         working together to create global change, invigorating the tangible scientific spectrums of our world.
                                     </h6>
-                                    <a href={brochure}><button type="button" class="btn filled-btn">Learn More</button></a>
+                                    <a href={brochure}><button type="button" class="btn filled-btn">Read Manifesto</button></a>
                                 </div>
                             </div>
                             {/* <!-- ends --> */}
