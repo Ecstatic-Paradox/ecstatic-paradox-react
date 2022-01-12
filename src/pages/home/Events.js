@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { baseURL } from '../reusable/server';
 import { truncate } from '../reusable/truncate';
-import researchpaper from"../../assests/researchpaper.jpg";
+import researchpaper from "../../assests/researchpaper.jpg";
 
 
 export default class Events extends Component {
@@ -33,8 +33,8 @@ export default class Events extends Component {
 
                     <div className="event-card">
                         <Link to={`research-papers/${item.slug}`}>
-                            <h2>{item.meta.title}</h2>
-                            <p>{truncate(item.description, 20)}</p>
+                            <h4>{item.meta.title}</h4>
+                            {/* <p>{truncate(item.description, 20)}</p> */}
                         </Link>
                     </div>
                 </div>

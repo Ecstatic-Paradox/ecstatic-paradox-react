@@ -53,8 +53,7 @@ export default class Courses extends Component {
                     <div className="about-hero hero-section" style={{ backgroundImage: `linear-gradient(rgb(20 20 40 / 60%), rgb(20 20 40 / 60%)), url(${coursescover})`, backgroundPosition: "center" }}>
                         <h1 className="big-text">Courses</h1>
                         <p className="small-text">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit,<br />
-                            Cupiditate minus placeat sapiente repellat in iure quas iusto.
+                            We create opportunities for students to learn various concepts in Physics and Tech.
                         </p>
                     </div>
                 </section>
@@ -65,7 +64,7 @@ export default class Courses extends Component {
                         <div className="snippet-head">
                             <h1 className="title mb-4">Learn From Us</h1>
                             <h5 className="snippet-head-paragraph">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lacus morbi accumsan, pulvinar sit nulla pellentesque tellus, elementum
+                                Our courses are devised after substantial discussion. We bring easily comprehensible yet highly rigorous content to pave path towards academic excellence.
                             </h5>
                         </div>
                         <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
