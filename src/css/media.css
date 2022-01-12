@@ -47,7 +47,6 @@
   #footer {
     padding: 1rem 0.8rem;
   }
-
 }
 
 @media (max-width: 767.98px) {
@@ -80,6 +79,9 @@
   }
   .cover h6 {
     width: 100% !important;
+  }
+  .member-image {
+    height: unset;
   }
 }
 
