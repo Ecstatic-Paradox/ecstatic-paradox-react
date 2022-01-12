@@ -34,7 +34,7 @@ export default class Gallery extends Component {
 
         return (
             <section id="wrapper">
-                <h1 className="title text-center mb-5">Shots From Special Moments </h1>
+                <h1 className="title text-center mb-5">Our Gallery</h1>
                 <div className="container-fluid">
                     <div className="gallery-wrap">
                         {content}

@@ -102,7 +102,7 @@ export default class About extends Component {
                                         and professional collaborations. The best thing is that everyone works voluntarily with intense passion. We are
                                         working together to create global change, invigorating the tangible scientific spectrums of our world.
                                     </h6>
-                                    <a href={brochure}><button type="button" class="btn filled-btn">Read Manifesto</button></a>
+                                    <a href={brochure}><button type="button" class="btn filled-btn">Read Annual Report</button></a>
                                 </div>
                             </div>
                             {/* <!-- ends --> */}
