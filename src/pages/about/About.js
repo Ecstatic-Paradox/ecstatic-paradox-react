@@ -3,10 +3,10 @@ import Collaborators from '../reusable/Collaborators';
 import { baseURL } from '../reusable/server';
 import FoundingMembers from './FoundingMembers';
 import GeneralMembers from './GeneralMembers';
-import mission from"../../assests/mission.jpg";
-import aboutus from"../../assests/aboutus.png";
-import aboutcover from"../../assests/about-cover.jpg";
-
+import mission from "../../assests/mission.jpg";
+import aboutus from "../../assests/aboutus.png";
+import aboutcover from "../../assests/about-cover.jpg";
+import brochure from "../../assests/brochure.pdf"
 
 
 
@@ -41,7 +41,7 @@ export default class About extends Component {
             <React.Fragment>
                 {/* <!-- HERO --> */}
                 <section id="wrapper">
-                    <div className="about-hero hero-section" style={{ backgroundImage: `linear-gradient(rgb(20 20 40 / 60%), rgb(20 20 40 / 60%)), url(${aboutcover})`, backgroundPosition: "center"}}>
+                    <div className="about-hero hero-section" style={{ backgroundImage: `linear-gradient(rgb(20 20 40 / 60%), rgb(20 20 40 / 60%)), url(${aboutcover})`, backgroundPosition: "center" }}>
                         <h1 className="big-text w-100">HOW WE REACHED HERE</h1>
                         <p className="small-text w-100">
                             We started with a team of 20 STEM enthusiasts, and through <br />consistent efforts in our scientific adventures, our team upgraded.
@@ -65,6 +65,7 @@ export default class About extends Component {
                                         also a self-learning platform where members gain proper exposure to scientific methodologies. We intend to
                                         rejuvenate science as group research and make impactful contributions through team efforts.
                                     </h6>
+
                                 </div>
                             </div>
                             {/* <!-- ends --> */}
@@ -101,6 +102,7 @@ export default class About extends Component {
                                         and professional collaborations. The best thing is that everyone works voluntarily with intense passion. We are
                                         working together to create global change, invigorating the tangible scientific spectrums of our world.
                                     </h6>
+                                    <a href={brochure}><button type="button" class="btn filled-btn">Learn More</button></a>
                                 </div>
                             </div>
                             {/* <!-- ends --> */}
@@ -109,8 +111,6 @@ export default class About extends Component {
                 </section>
                 {/* <!-- ABOUT --> */}
 
-
-                <Collaborators />
 
                 {/* <!-- members --> */}
                 <section id="wrapper">
@@ -123,6 +123,8 @@ export default class About extends Component {
                         <GeneralMembers members={this.state.members} />
                     </div>
                 </section>
+
+                <Collaborators />
             </React.Fragment>
         )
     }
