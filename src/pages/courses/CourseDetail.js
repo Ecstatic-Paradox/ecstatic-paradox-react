@@ -44,14 +44,14 @@ export default class CourseDetail extends Component {
                 <div className="webinar-indetails">
                     <h1>Description</h1>
                     <div className="row">
-                        <div className="col-md-12 col-xl-6">
+                        <div className="col-md-12"> //col-xl-6
                             <h6>
                                 {item.description}
                             </h6>
 
                         </div>
 
-                        <div className="col-md-12 col-xl-6">
+                        {/* <div className="col-md-12 col-xl-6">
                             <div className="webinar-form">
                                 <h2>Link</h2>
                                 <div className="form mt-5 text-center">
@@ -72,7 +72,7 @@ export default class CourseDetail extends Component {
                                     </a>
                                 </div>
                             </div>
-                        </div>
+                        </div> */}
 
                     </div>
                 </div>
