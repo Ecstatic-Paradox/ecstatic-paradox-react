@@ -426,7 +426,7 @@ a:hover {
 }
 .footer-copyright {
   text-align: center;
-  padding: 0.7rem;
+  padding: 1.5rem 0.7rem;
   background: #282828;
   color: #c4c4c4;
 }
@@ -440,8 +440,11 @@ a:hover {
 
 .core-member-icon svg {
   width: 2rem;
-  fill: white;
-  margin-right: 0.5rem;
+  margin-right: 1rem;
+}
+
+.core-member-info p {
+  font-size: 0.8rem;
 }
 
 /* ABOUT PAGE */
@@ -534,7 +537,7 @@ a:hover {
   .core-member-wrap {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr));
-    grid-gap: 1rem;
+    grid-gap: 0.5rem;
   }
 
   .core-member-wrap,
