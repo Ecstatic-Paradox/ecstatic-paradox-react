@@ -35,7 +35,7 @@ export default class Gallery extends Component {
                         large={`${baseURL}${item.thumbnail.meta.download_url}`}
                         hideDownload={true}
                         alt=""
-                    />;
+                    />
                     {/* <img className="gallery-image" src={`${baseURL}${item.thumbnail.meta.download_url}`} alt="back view of woman wearing a backpack and beanie waiting to cross the road on a busy street at night in New York City, USA" /> */}
                 </div>
             )
@@ -47,7 +47,6 @@ export default class Gallery extends Component {
                 <div className="container-fluid">
                     <div className="gallery-wrap">
                         {content}
-
                     </div>
                 </div>
             </section>

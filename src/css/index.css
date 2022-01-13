@@ -315,6 +315,10 @@ a:hover {
   overflow: hidden;
 }
 
+.gallery-item > div {
+  overflow: hidden;
+}
+
 .gallery-image {
   display: block;
   width: 100%;
