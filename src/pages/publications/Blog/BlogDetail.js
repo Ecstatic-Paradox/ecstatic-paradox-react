@@ -49,7 +49,7 @@ export default class BlogDetail extends Component {
 
         const content = item ? <section id="wrapper">
             <div className="container">
-                <h4 className="project-heading my-5">Case Study</h4>
+                <h4 className="project-heading my-5">Blog</h4>
                 <div className="blog-detail-head w-100 d-flex align-items-center my-4">
                     <div className="avatar d-flex align-items-center">
                         <img src={`${baseURL}${item.meta.owner.avatar}`} alt="Avatar" />

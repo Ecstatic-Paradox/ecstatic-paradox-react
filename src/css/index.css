@@ -143,7 +143,7 @@ a:hover {
 /* NAVBAR */
 
 #wrapper {
-  margin-bottom: 10rem;
+  margin-bottom: 5rem;
 }
 
 /* HERO */
@@ -318,7 +318,7 @@ a:hover {
 .gallery-image {
   display: block;
   width: 100%;
-  height: 100%;
+  height: 30rem;
   object-fit: cover;
   transition: transform 400ms ease-out;
 }
@@ -344,17 +344,17 @@ a:hover {
 /* SPONSOR */
 .sponsors {
   background: var(--white);
-  padding: 5rem 0;
+  padding: 3rem 0;
 }
 
 .sponsor-wrap {
   width: 100%;
-  margin-top: 5rem;
+  margin-top: 1.5rem;
 }
 
 .sponsor-img {
   width: 100%;
-  padding: 2rem 0;
+  /* padding: 2rem 0; */
   text-align: center;
 }
 
@@ -485,7 +485,7 @@ a:hover {
 .member-image {
   display: block;
   width: 100%;
-  height: 30rem;
+  height: 20rem;
   object-fit: cover;
 }
 
@@ -529,7 +529,7 @@ a:hover {
 @supports (display: grid) {
   .core-member-wrap {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr));
     grid-gap: 1rem;
   }
 

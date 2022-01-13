@@ -74,15 +74,15 @@
     text-align: center;
   }
 
-  #wrapper {
-    margin-bottom: 10rem;
-  }
   .cover h6 {
     width: 100% !important;
   }
   .member-image {
     height: unset;
   }
+  /* .gallery-image {
+    height: unset;
+  } */
 }
 
 @media (max-width: 991.98px) {

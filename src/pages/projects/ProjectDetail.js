@@ -53,7 +53,7 @@ export default class ProjectDetail extends Component {
 
         const body = project ? <section id="wrapper">
             <div className="container-fluid project-case-study">
-                <h4 className="project-heading">Case Study</h4>
+                <h4 className="project-heading">Project</h4>
                 <div className="project-overview">
                     <div className="row">
                         <div className="col-md-12 col-xl-6 mb-5">

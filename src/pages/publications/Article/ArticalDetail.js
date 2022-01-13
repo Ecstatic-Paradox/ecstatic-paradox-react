@@ -37,11 +37,11 @@ export default function ArticalDetail({ match }) {
     <React.Fragment>
       <section id="wrapper">
         <div className="container-fluid project-case-study">
-          <h4 className="project-heading">Case Study</h4>
+          <h4 className="project-heading">Article</h4>
           <div className="project-overview">
             <div className="container">
               <h5 className="project-points mb-5">Article Published on {articleDate} {article.author ? `by ${article.author}` : ''} </h5>
-
+              <a href={article.pdf_file}>Learn</a>
               <Document
                 file={article.pdf_file}
                 onLoadSuccess={onDocumentLoadSuccess}
