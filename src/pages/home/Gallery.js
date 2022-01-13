@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { baseURL } from '../reusable/server';
+import ModalImage from "react-modal-image";
 
 export default class Gallery extends Component {
 
@@ -26,8 +27,16 @@ export default class Gallery extends Component {
     render() {
         const content = this.state.images.map(item => {
             return (
+
                 <div key={item.thumbnail.id} className="gallery-item">
-                    <img className="gallery-image" src={`${baseURL}${item.thumbnail.meta.download_url}`} alt="back view of woman wearing a backpack and beanie waiting to cross the road on a busy street at night in New York City, USA" />
+                    <ModalImage
+                        className="gallery-image"
+                        small={`${baseURL}${item.thumbnail.meta.download_url}`}
+                        large={`${baseURL}${item.thumbnail.meta.download_url}`}
+                        hideDownload={true}
+                        alt=""
+                    />;
+                    {/* <img className="gallery-image" src={`${baseURL}${item.thumbnail.meta.download_url}`} alt="back view of woman wearing a backpack and beanie waiting to cross the road on a busy street at night in New York City, USA" /> */}
                 </div>
             )
         })
