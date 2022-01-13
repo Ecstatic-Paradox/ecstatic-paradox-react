@@ -369,7 +369,7 @@ a:hover {
 /* FOOTER */
 #footer {
   width: 100%;
-  padding: 3rem;
+  padding: 1rem 0.7rem 0.7rem 0.7rem;
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -378,10 +378,10 @@ a:hover {
 #footer a {
   color: #c4c4c4;
   font-size: 1.1rem;
-  font-weight: 600;
+  font-weight: 400;
 }
 #footer img {
-  width: 25rem;
+  width: 22rem;
   margin-bottom: 1rem;
 }
 #footer > div {
@@ -422,7 +422,7 @@ a:hover {
 }
 .footer-copyright {
   text-align: center;
-  padding: 1rem;
+  padding: 0.7rem;
   background: #282828;
   color: #c4c4c4;
 }

@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { baseURL } from '../reusable/server';
 import { truncate } from '../reusable/truncate';
-import coursescover from "../../assests/graduation.png"
+import coursescover from "../../assests/courses.jpg"
 
 export default class Courses extends Component {
 
