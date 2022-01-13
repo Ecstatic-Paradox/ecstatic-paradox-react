@@ -44,7 +44,8 @@ export default class CourseDetail extends Component {
                 <div className="webinar-indetails">
                     <h1>Description</h1>
                     <div className="row">
-                        <div className="col-md-12"> //col-xl-6
+                        <div className="col-md-12">
+                            {/* col-xl-6 */}
                             <h6>
                                 {item.description}
                             </h6>
