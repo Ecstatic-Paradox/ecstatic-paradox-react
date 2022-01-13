@@ -124,7 +124,7 @@ export default class About extends Component {
                     </div>
                 </section>
 
-                <Collaborators />
+                {/* <Collaborators /> */}
             </React.Fragment>
         )
     }
