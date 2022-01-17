@@ -11,6 +11,16 @@ export default function ArticalDetail({ match }) {
     fetchArticle();
   }, []);
 
+  function removeTextLayerOffset() {
+    const textLayers = document.querySelectorAll(".react-pdf__Page__textContent");
+    textLayers.forEach(layer => {
+      const { style } = layer;
+      style.top = "0";
+      style.left = "0";
+      style.transform = "";
+    });
+  }
+
   function onDocumentLoadSuccess({ numPages }) {
     setNumPages(numPages);
   }
@@ -48,7 +58,7 @@ export default function ArticalDetail({ match }) {
               >
                 {Array.apply(null, Array(numPages))
                   .map((x, i) => i + 1)
-                  .map((page, index) => <Page key={index} scale={2.1} size="A4" pageNumber={page} />)}
+                  .map((page, index) => <Page key={index} onLoadSuccess={removeTextLayerOffset} scale={2.1} size="A4" pageNumber={page} />)}
 
               </Document>
               <div>
