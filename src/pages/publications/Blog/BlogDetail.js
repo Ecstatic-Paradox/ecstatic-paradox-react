@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Loader from '../../reusable/Loader';
 import { baseURL } from '../../reusable/server';
+import { paradoxlogo } from '../../../assests/aboutus.png';
 
 function Content(item) {
     let item_tag
@@ -52,7 +53,7 @@ export default class BlogDetail extends Component {
                 <h4 className="project-heading my-5">Blog</h4>
                 <div className="blog-detail-head w-100 d-flex align-items-center my-4">
                     <div className="avatar d-flex align-items-center">
-                        {item.meta.owner.avatar ? <img src={`${baseURL}${item.meta.owner.avatar}`} alt="Avatar" /> : ''}
+                        {item.meta.owner.avatar ? <img src={`${baseURL}${item.meta.owner.avatar}`} alt="Avatar" /> : <img src={paradoxlogo} alt="Avatar" />}
                         <h5 className="ms-3">{item.meta.owner.first_name} {item.meta.owner.last_name}</h5>
                     </div>
                     <div className="d-flex align-items-center ms-5">
