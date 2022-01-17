@@ -52,7 +52,7 @@ export default class BlogDetail extends Component {
                 <h4 className="project-heading my-5">Blog</h4>
                 <div className="blog-detail-head w-100 d-flex align-items-center my-4">
                     <div className="avatar d-flex align-items-center">
-                        <img src={`${baseURL}${item.meta.owner.avatar}`} alt="Avatar" />
+                        {item.meta.owner.avatar ? <img src={`${baseURL}${item.meta.owner.avatar}`} alt="Avatar" /> : ''}
                         <h5 className="ms-3">{item.meta.owner.first_name} {item.meta.owner.last_name}</h5>
                     </div>
                     <div className="d-flex align-items-center ms-5">
@@ -73,7 +73,7 @@ export default class BlogDetail extends Component {
                         </span>
                         <span>{item.view_count} views</span>
                     </div>
-                    <div className="d-flex align-items-center ms-5">
+                    {/* <div className="d-flex align-items-center ms-5">
                         <span className="me-2">
                             <svg width="25" viewBox="0 0 512 512">
                                 <circle cx="128" cy="256" r="48" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="32" />
@@ -83,7 +83,7 @@ export default class BlogDetail extends Component {
                             </svg>
                         </span>
                         <span>Share</span>
-                    </div>
+                    </div> */}
                 </div>
                 <h1 className='title'>{item.meta.title}</h1>
 
