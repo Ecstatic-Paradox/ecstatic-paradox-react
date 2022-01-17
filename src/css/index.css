@@ -233,6 +233,18 @@ a:hover {
 
 /* CTA */
 
+/* people */
+
+.special-tag {
+  text-align: right;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+/* style={{ textAlign: "right" }} */
+
+/* people */
+
 /* EVENTS */
 .event-wrap {
   margin-top: 5rem;

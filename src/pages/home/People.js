@@ -18,6 +18,7 @@ export default class People extends Component {
                                     practitioners. With this, we are in this relentless thrive to serve for nothing but one goal: the amalgamation of
                                     Physics and Tech. Only shared actions and minds can make us achieve the best of what we can.
                                 </p>
+                                <h5 className='special-tag'>- Abhishek Karna</h5>
                             </div>
                         </div>
                         {/* <!-- ends --> */}

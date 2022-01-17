@@ -80,6 +80,11 @@
   .member-image {
     height: unset;
   }
+
+  .special-tag {
+    text-align: left;
+    margin-bottom: 30px;
+  }
   /* .gallery-image {
     height: unset;
   } */

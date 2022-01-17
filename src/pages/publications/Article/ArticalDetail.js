@@ -41,7 +41,6 @@ export default function ArticalDetail({ match }) {
           <div className="project-overview">
             <div className="container">
               <h5 className="project-points mb-5">Article Published on {articleDate} {article.author ? `by ${article.author}` : ''} </h5>
-              <a href={article.pdf_file}>Learn</a>
               <Document
                 file={article.pdf_file}
                 onLoadSuccess={onDocumentLoadSuccess}
