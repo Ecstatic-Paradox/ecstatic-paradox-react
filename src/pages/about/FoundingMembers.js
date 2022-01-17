@@ -23,17 +23,17 @@ export default class FoundingMembers extends Component {
 
                                 {mem.personal_website ? <a href={mem.personal_website} target="_blank" rel="noopener noreferrer">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                                        <path d="M256 48C141.13 48 48 141.13 48 256s93.13 208 208 208 208-93.13 208-208S370.87 48 256 48z" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="25" />
-                                        <path d="M256 48c-58.07 0-112.67 93.13-112.67 208S197.93 464 256 464s112.67-93.13 112.67-208S314.07 48 256 48z" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="25" />
-                                        <path d="M117.33 117.33c38.24 27.15 86.38 43.34 138.67 43.34s100.43-16.19 138.67-43.34M394.67 394.67c-38.24-27.15-86.38-43.34-138.67-43.34s-100.43 16.19-138.67 43.34" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="25" />
-                                        <path fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="25" d="M256 48v416M464 256H48" />
+                                        <path d="M256 48C141.13 48 48 141.13 48 256s93.13 208 208 208 208-93.13 208-208S370.87 48 256 48z" fill="none" stroke="#fff" strokeMiterlimit="10" strokeWidth="25" />
+                                        <path d="M256 48c-58.07 0-112.67 93.13-112.67 208S197.93 464 256 464s112.67-93.13 112.67-208S314.07 48 256 48z" fill="none" stroke="#fff" strokeMiterlimit="10" strokeWidth="25" />
+                                        <path d="M117.33 117.33c38.24 27.15 86.38 43.34 138.67 43.34s100.43-16.19 138.67-43.34M394.67 394.67c-38.24-27.15-86.38-43.34-138.67-43.34s-100.43 16.19-138.67 43.34" fill="none" stroke="#fff" strokeLinecap="round" strokeLinejoin="round" strokeWidth="25" />
+                                        <path fill="none" stroke="#fff" strokeMiterlimit="10" strokeWidth="25" d="M256 48v416M464 256H48" />
                                     </svg>
                                 </a> : ''}
 
                                 {mem.email ? <a href={`mailto:${mem.email}`} target="_blank" rel="noopener noreferrer">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                                        <rect x="48" y="96" width="416" height="320" rx="40" ry="40" fill="none" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" />
-                                        <path fill="none" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M112 160l144 112 144-112" />
+                                        <rect x="48" y="96" width="416" height="320" rx="40" ry="40" fill="none" stroke="#ffffff" strokeLinecap="round" strokeLinejoin="round" strokeWidth="32" />
+                                        <path fill="none" stroke="#ffffff" strokeLinecap="round" strokeLinejoin="round" strokeWidth="32" d="M112 160l144 112 144-112" />
                                     </svg>
                                 </a> : ''}
                             </div>
