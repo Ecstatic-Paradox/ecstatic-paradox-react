@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Loader from '../../reusable/Loader';
 import { baseURL } from '../../reusable/server';
-import { paradoxlogo } from '../../../assests/aboutus.png';
+import paradoxlogo from '../../../assests/aboutus.png';
 
 function Content(item) {
     let item_tag
