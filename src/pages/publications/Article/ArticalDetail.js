@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Document, Page } from 'react-pdf/dist/esm/entry.webpack';
 import { baseURL } from '../../reusable/server';
+import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
 
 
 export default function ArticalDetail({ match }) {
@@ -10,16 +11,6 @@ export default function ArticalDetail({ match }) {
   useEffect(() => {
     fetchArticle();
   }, []);
-
-  function removeTextLayerOffset() {
-    const textLayers = document.querySelectorAll(".react-pdf__Page__textContent");
-    textLayers.forEach(layer => {
-      const { style } = layer;
-      style.top = "0";
-      style.left = "0";
-      style.transform = "";
-    });
-  }
 
   function onDocumentLoadSuccess({ numPages }) {
     setNumPages(numPages);
@@ -58,7 +49,7 @@ export default function ArticalDetail({ match }) {
               >
                 {Array.apply(null, Array(numPages))
                   .map((x, i) => i + 1)
-                  .map((page, index) => <Page key={index} onLoadSuccess={removeTextLayerOffset} scale={2.1} size="A4" pageNumber={page} />)}
+                  .map((page, index) => <><Page key={index} scale={2.1} size="A4" pageNumber={page} /><br /></>)}
 
               </Document>
               <div>
