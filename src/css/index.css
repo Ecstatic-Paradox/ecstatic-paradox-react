@@ -920,3 +920,7 @@ a:hover {
 .error-message p {
   margin-bottom: 3rem;
 }
+
+.react-pdf__Page__textContent {
+  display: none;
+}
