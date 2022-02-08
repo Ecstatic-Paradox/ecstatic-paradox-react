@@ -2,21 +2,26 @@ import { useRouter } from "next/router";
 import Loader from "../../reusable/Loader";
 import React, { useEffect, useState } from "react";
 import { baseURL } from "../../reusable/server";
+import Head from "next/head";
 
 function CourseDetail() {
   const [course, setCourse] = useState(null);
+  const router = useRouter();
 
-  const query = useRouter().query;
+  const query = router.query;
   const id = query["number"];
   async function fetchCourse() {
     try {
-      const data = await fetch(`${baseURL}/api/courses/${id}`);
+      const data = await fetch(
+        `${baseURL || "https://app.ecstaticparadox.com"}/api/courses/${id}`
+      );
       const item = await data.json();
       if (item) {
         setCourse(item);
       }
     } catch (err) {
       console.log("some error occured");
+      router.push("/404");
     }
   }
   useEffect(() => {

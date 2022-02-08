@@ -7,6 +7,7 @@ import GeneralMembers from "../components/about/GeneralMembers";
 import mission from "../assests/mission.jpg";
 import aboutus from "../assests/aboutus.png";
 import aboutcover from "../assests/about-cover.jpg";
+import Head from "next/head";
 // import brochure from "../assests/brochure.pdf";
 
 import Table from "@mui/material/Table";
@@ -41,6 +42,8 @@ export default class About extends Component {
   render() {
     return (
       <React.Fragment>
+        <Head></Head>
+
         {/* <!-- HERO --> */}
         <section id="wrapper">
           <div

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { baseURL } from "../../reusable/server";
 import { truncate } from "../../reusable/truncate";
 import coursescover from "../../assests/courses.jpg";
+import Head from "next/head";
 
 export default class Courses extends Component {
   state = {
@@ -50,6 +51,7 @@ export default class Courses extends Component {
     });
     return (
       <>
+        <Head></Head>
         <section id="wrapper">
           <div
             className="about-hero hero-section"

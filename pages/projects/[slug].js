@@ -2,6 +2,8 @@ import React, { Component, useEffect, useState } from "react";
 import Loader from "../../reusable/Loader";
 import { baseURL } from "../../reusable/server";
 import { useRouter } from "next/router";
+import App from "next/app";
+import Head from "next/head";
 
 function Content(item) {
   let item_tag;
@@ -26,17 +28,22 @@ function Content(item) {
 function ProjectDetail() {
   const [project, setProject] = useState({});
   const team = project.id ? project.meta.sections[0] : "";
-  const query = useRouter().query;
-  const slug = query["slug"];
+  const router = useRouter();
+  const slug = router.query["slug"];
 
   const fetchProject = async () => {
-    fetch(`${baseURL}/api/projects/${slug}`).then(async (response) => {
+    try {
+      const response = await fetch(
+        `${baseURL || "https://app.ecstaticparadox.com"}/api/projects/${slug}`
+      );
       const item = await response.json();
-
-      if (item.id) {
+      if (item) {
         setProject(item);
       }
-    });
+    } catch (err) {
+      console.log(err);
+      router.push("/404");
+    }
   };
   const contents = project.id
     ? project.content.map((con, index) => {

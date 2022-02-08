@@ -1,11 +1,13 @@
 import React, { Component } from "react";
 import ProjectList from "../../components/projects/ProjectList.js";
 import projectcover from "../../assests/projects-cover.jpg";
+import Head from "next/head";
 
 export default class Project extends Component {
   render() {
     return (
       <>
+        <Head></Head>
         <section id="wrapper">
           <div
             className="about-hero hero-section"

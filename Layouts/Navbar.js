@@ -62,7 +62,7 @@ function Navbar() {
                     </Link>
                   </li>
                   <li>
-                    <Link href="/researchpapers">
+                    <Link href="/research-papers">
                       <a className="dropdown-item">Research Papers</a>
                     </Link>
                   </li>
